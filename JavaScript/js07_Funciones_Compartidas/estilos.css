@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.funciones {
+    width: 60%;
+    height: 60vh;
+    margin: auto;
+    background: #21295c;
+    margin-top: 50px;
+    border: 2px solid black;
+}
+
+.contenedor {
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    background: lightblue;
+}
+
+input[type="text"] {
+    border: 3px solid blue;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    top: -21px;
+    text-align: right;
+}
+
+button {
+    width: 80%;
+}
+
+.botones {
+    width: 90%;
+    height: 230px;
+    margin: auto;
+    background: lightgoldenrodyellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 250px;
+    height: 60px;
+    background-color: white;
+    color: black;
+    border: 2px solid #1a1b1a;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CentradoVerticalmenteCajaFlex</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            
+        }
+
+        .contenedor {
+            width: 90%;
+            height: 1000px;
+            background: wheat;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-around;
+            overflow-y: auto;
+            flex-wrap: wrap;
+        }
+
+        .contenedor-imagen {
+            width: 400px;
+            height: 450px;
+
+        }
+
+        .contenedor-imagen img {
+            max-width: 400px;
+            max-height: 450px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="contenedor-imagen"><img src="./shutterstock.jpg" alt=""></div>
+        <div class="contenedor-imagen"><img src="./shutterstock.jpg" alt=""></div>
+        <div class="contenedor-imagen"><img src="./shutterstock.jpg" alt=""></div>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

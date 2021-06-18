@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(130, 203, 228);
+}
+
+h1 {
+    font-weight: normal;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 32px;
+    color: rgb(226, 212, 212);
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+
+table,
+td {
+    border-collapse: collapse;
+}
+
+thead {
+    display: table;
+    width: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    color: rgb(7, 7, 7);
+}
+
+tbody {
+    display: block;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+th {
+    border-right: 2px solid rgba(0, 0, 0, .2);
+    font-size: 22px;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 8px;
+    background: #0c0c0c;
+    border-bottom: 1px solid #fff;
+    color: rgb(255, 255, 255);
+}
+
+tr:hover td {
+    background: #d0dafd;
+    color: #339;
+}
+
+a {
+    color: rgb(48, 76, 199);
+}
+
+th,
+td {
+    width: 20%;
+    word-break: break-all;
+    padding: 12px;
+}
+
+tr {
+    display: table;
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    color: rgb(17, 17, 19);
+    border-top: 1px solid transparent;
+}
+
+tbody tr:nth-child(odd) {
+    background: #57f0bd;
+}
+
+tbody tr:nth-child(even) {
+    background: #db7a6e;
+}
+
+[campo-dato='Id'] {
+    width: 5%;
+}
+
+
+/*[campo-dato='Nick'] {
+    width: 20%;
+}
+
+[data-campo='Mail'] {
+    width: 20%;
+}
+
+[data-campo='Web'] {
+    width: 20%;
+}
+
+[data-campo='Twitter'] {
+    width: 20%;
+}
+
+
+/*[campo-dato='Skype'] {
+    width: 21%;
+}*/
+
+@media(max-width:1200px) {
+    [campo-dato='Skype'] {
+        display: none;
+    }
+}
+
+tbody tr:nth-child(odd) {
+    background: rgba (0, 0, 0, .2);
+}

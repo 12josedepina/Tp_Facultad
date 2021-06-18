@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    display: block;
+    margin-top: 40px;
+}
+
+.formulario {
+    max-width: 80vw;
+    min-height: 40vh;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: rgb(185, 184, 184);
+}
+
+h1 {
+    font-size: 27px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+form label {
+    font-size: 18px;
+    font-weight: bold;
+    font-weight: bold;
+    display: inline-block;
+}
+
+form input[type="text"] {
+    width: 180px;
+    padding: 5px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+.boton {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    padding: 15px 16px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background-color: #f2f3eb;
+    color: rgb(34, 112, 230);
+    font-weight: bold;
+    font-size: 15px;
+}

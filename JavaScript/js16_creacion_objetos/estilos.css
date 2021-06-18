@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+
+body {
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.botones {
+    width: 100%;
+    display: block;
+}
+
+.btn-borde {
+    padding: .375rem .75rem;
+    border: 1px solid #007bff;
+    border-radius: .25rem;
+    color: #007bff;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out;
+    margin-top: 10px;
+}
+
+.btn-borde:hover,
+.btn-borde:active,
+.btn-borde:focus {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.contenedor {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedorDiv {
+    border: 2px solid rgb(12, 11, 11);
+    margin-top: 10px;
+    width: 800px;
+    height: 400px;
+    background: rgb(228, 223, 155);
+    margin: auto;
+    overflow: auto;
+}
+
+.claseObjetoDinamico {
+    width: 30%;
+    height: 60px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background: rgb(29, 158, 197);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}

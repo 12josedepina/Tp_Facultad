@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormularioDeValidacion</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+
+
+
+    <div class="formulario">
+        <h1>Confirmacion de envio y reset</h1> <br>
+
+        <form id="miform" name="miform" action="./respuestaFormulario.html" method="GET">
+
+            <label for="miform">Nombre</label>
+            <br>
+            <input type="text" name="nombre" id="miform">
+            <br>
+            <br>
+            <label for="miform">Apellido</label>
+            <br>
+            <input type="text" name="apellido" id="miform">
+        </form>
+        <br>
+        <div class="boton">
+            <button id="reset" class="btn">Blanquear</button>
+            <button id="submit" class="btn">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("submit").onclick = function() {
+            if (confirm('¿Estas seguro de enviar este formulario?')) {
+                document.miform.submit()
+            }
+            document.getElementById("miform").submit();
+            document.getElementById("miform").method = "GET";
+            document.getElementById("miform").action = "./respuestaFormulario.html";
+        }
+
+        document.getElementById("reset").onclick = function() {
+            document.getElementById("miform").reset();
+        }
+    </script>
+
+
+</body>
+
+</html>

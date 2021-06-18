@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VariableObjetoDato</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h2>Adicionar personas</h2>
+        <span>Nombre:</span>
+        <br>
+        <input type="text" id="nombre" class="field">
+        <br>
+        <br>
+        <span>Apellido:</span>
+        <br>
+        <input type="text" id="apellido" class="field">
+        <br>
+        <br>
+        <span>Fecha de Nacimiento:</span>
+        <br>
+        <input type="text" id="fechaNac" value="" class="field">
+        <br>
+        <br>
+
+        <button id="creaPersona" class="btn">Crea Persona</button>
+    </div>
+
+    <div id="presentacion" class="botones">
+        <h2>Control</h2>
+        <button id="lista" class="btn">Lista Personas</button>
+        <button id="ocultar" class="btn">Oculta Presentacion</button>
+        <div id="caja" style="display: block;">
+            <table id="ListaPersonas" class="tabla">
+                <h1>Presentacion</h1>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>FechaNac</td>
+
+                </tr>
+
+            </table>
+        </div>
+
+
+        <div id="cantidadPersonas"></div>
+    </div>
+
+
+
+    <script src="./index.js">
+    </script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VentanaModal</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+    <div class="conteiner">
+
+        <h1 class="principal">Esto es el div contenedor</h1>
+
+        <div class="boton-modal">
+            <button id="mostrar" onclick=mi_funcion() class="btn">Abre Div Modal</button>
+        </div>
+
+
+        <div id="contenedor-modal" class="modal" style="display: none;">
+
+
+            <header>
+                <h1>Formulario para ALTA-Maestro de Articulos</h1>
+                <span class="close-btn">
+                    <button id="ocultar" class="close">X</button>
+                    </span>
+
+            </header>
+
+            <div class="formulario">
+
+
+                <form id="form" action="../esp01FormVariableArregloDeObjetos/respuesta.html" class="form1">
+                    <div class="contenedor1">
+                        <div class="hijo">
+                            <p>CodArt:</p>
+                            <br>
+                            <input type="text" id="codArt" name="codArt" class="inputFields" required title="complete este campo">
+                            <br>
+                            <br>
+                        </div>
+                        <div class="hijo">
+                            <p>Descripcion:</p>
+                            <br>
+                            <input type="text" id="descripcion" name="descripcion" class="inputFields" required title="complete este campo">
+                            <br>
+                            <br>
+                        </div>
+
+                        <div class="hijo">
+                            <p>Saldo Stock:</p>
+                            <br>
+                            <input type="number" id="saldoStock" name="saldoStock" class="inputFields" required title="complete este campo">
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+
+
+                    <div class="contenedor2">
+                        <div class="hijo">
+                            <p>Familia de Articulo:</p>
+                            <br>
+                            <select name="article-select" id="articulo-select" class="inputFields1"></select>
+                            <br>
+                            <br>
+                        </div>
+
+                        <div class="hijo">
+
+                            <p>Fecha de Alta:</p>
+                            <br>
+                            <input type="date" id="FechaAlta" name="FechaAlta" class="inputFields" required title="complete este campo">
+                            <br>
+                            <br>
+                        </div>
+
+                        <div class="boton">
+                            <button class="join-btn " id="button">ENVIAR</button>
+                        </div>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+            <footer>
+                <h1>Pie de Formulario</h1>
+            </footer>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="../jquery.js"></script>
+    <script src="../familia.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#ocultar").on('click', function() {
+                $("#contenedor-modal").hide();
+                return false;
+            });
+
+            $("#mostrar").on('click', function() {
+                $("#contenedor-modal").show();
+                return false;
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            //cuando inicia o carga la pagina html se ejecuta esto
+            loadSelectFamilyArticles();
+
+        });
+
+        function loadSelectFamilyArticles() {
+
+            var jsonArticlesData = JSON.parse(data);
+
+            console.log(data);
+            console.log(jsonArticlesData);
+
+            jsonArticlesData.articlesFamily.forEach(function(articleObject, index) {
+
+                var optionElement = document.createElement("option");
+
+                optionElement.setAttribute("value", articleObject.articleFamily.value);
+
+                optionElement.innerHTML = articleObject.articleFamily.description;
+
+                document.getElementById("articulo-select").appendChild(optionElement);
+
+            });
+
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            validarFormulario();
+        });
+
+        function validarFormulario() {
+            $("#form").validate();
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+
+            function mi_funcion() {
+                $('#mostrar').attr("disabled", true);
+
+            }
+
+        });
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

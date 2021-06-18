@@ -1,0 +1,28 @@
+/*{
+    margin: 10;
+    padding: 10;
+    
+}
+*/
+body {
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    
+}
+
+
+
+.contenedor{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    
+    background-color: black;
+  
+    }
+    .inner{
+    margin:2px;
+    flex:1;
+    min-width:100px;
+    padding:5px;
+    }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreacionObjetos</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+
+    <div class="botones">
+        <button id="crearDivs" class="btn-borde">Crear</button>
+        <button id="limpiar" class="btn-borde">Limpiar</button>
+        <button id="info" class="btn-borde">Info</button>
+    </div>
+
+
+
+    <div class="contenedor">
+        <div id="contenedorDiv"></div>
+    </div>
+
+
+
+    <script>
+        document.getElementById("crearDivs").onclick = function() {
+
+
+            var objDiv = document.createElement("div");
+            var newContent = ' Elemento creado: ';
+
+
+            newContent = newContent + document.getElementById("contenedorDiv").childNodes.length;
+
+
+
+            objDiv.setAttribute('class', "claseObjetoDinamico");
+            objDiv.innerHTML = newContent;
+            document.getElementById("contenedorDiv").appendChild(objDiv);
+
+        }
+
+        document.getElementById("limpiar").onclick = function() {
+            while (document.getElementById("contenedorDiv").childNodes.length > 0) {
+                document.getElementById("contenedorDiv").removeChild(document.getElementById("contenedorDiv").childNodes[0]);
+            }
+        }
+
+        document.getElementById("info").onclick = function() {
+            var arrays = document.getElementById("contenedorDiv").childNodes.length;
+
+
+
+            arrays.innerHTML = ("Longitud del childNodes: " + arrays.length);
+
+
+        }
+    </script>
+
+</body>
+
+</html>

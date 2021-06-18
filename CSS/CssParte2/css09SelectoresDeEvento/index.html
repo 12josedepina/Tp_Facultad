@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css09SelectoresDeEvento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        #contenedor {
+            height: 100%;
+            max-width: 80%;
+            margin: auto;
+            background-color: lightblue;
+        }
+        
+        .botonop {
+            float: left;
+            text-decoration: none;
+            color: rgb(240, 243, 76);
+            font-weight: 600;
+            font-size: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: rgb(102, 102, 102);
+            border-width: 3px;
+            border-style: solid;
+            border-color: #180ea3;
+        }
+        
+        .botonop:hover {
+            background-color: rgb(75, 255, 237);
+            color: white;
+        }
+        
+        .botonop:active {
+            background-color: rgb(237, 240, 88);
+        }
+        
+        .nuevaFila {
+            clear: both;
+            margin-bottom: 40px;
+        }
+        
+        input {
+            display: block;
+            width: 150px;
+        }
+        
+        input:focus {
+            background-color: cornflowerblue;
+        }
+        
+        .contenedor-imagenes {
+            width: 55%;
+            height: 150px;
+        }
+        
+        .caja {
+            width: 20%;
+            height: 150px;
+            border-width: 2px;
+            color: black;
+            border-style: solid;
+            float: left;
+            margin-top: -17px;
+        }
+        
+        .caja img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .Imagen:active {
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedor">
+
+        <nav id="boton">
+            <div><a href="./respuesta1.html" class="botonop">Opcion 1.</a></div>
+            <div><a href="./respuesta2.html" class="botonop">Opcion 2.</a></div>
+            <div><a href="./respuesta3.html" class="botonop">Opcion 3.</a></div>
+            <div class="nuevaFila" style="clear: both;"></div>
+        </nav>
+
+
+
+
+        <div>
+
+            <form action="">
+                <label style="font-weight: bold" for="apellido"> Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido">
+
+                <label style="font-weight: bold" for="apellido"> Nombres:</label><br>
+                <input type="text" id="apellido" name="apellido">
+                <div class="nuevaFila" style="clear: both;"></div>
+            </form>
+
+        </div>
+
+        <div class="contenedor-imagenes">
+            <div class="caja">
+                <div class="Imagen"><img src="./volcano.jpg" alt=""></div>
+            </div>
+            <div class="caja">
+                <div class="Imagen"><img src="./TIGRE.jpg" alt=""></div>
+            </div>
+            <div class="caja">
+                <div class="Imagen"><img src="./castillo-montaña.jpg" alt=""></div>
+            </div>
+            <div class="caja">
+                <div class="Imagen"><img src="./mundo-flores.jpg" alt=""></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

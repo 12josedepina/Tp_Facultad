@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.entrada {
+    width: 30%;
+    height: 250px;
+    background: lightslategray;
+}
+
+.entrada div {
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.entrada span {
+    font-size: 25px;
+    font-weight: bold;
+    font-weight: bold;
+    text-align: center;
+}
+
+.entrada input[type="text"] {
+    width: 180px;
+    padding: 5px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+.send {
+    width: 30%;
+    height: 250px;
+    background: rgb(53, 131, 131);
+    overflow: hidden;
+}
+
+.send span {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    font-weight: bold;
+    text-align: center;
+}
+
+.send div {
+    max-width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    width: 176px;
+    height: 68px;
+    font-size: 25px;
+    color: tomato;
+    border-radius: 3px solid;
+}
+
+#resultado {
+    width: 40%;
+    height: 250px;
+    background: rgb(124, 167, 45);
+    overflow: hidden;
+}
+
+#resultado span {
+    font-size: 25px;
+    font-weight: bold;
+    font-weight: bold;
+    text-align: center;
+}
+
+#estado {
+    width: 30%;
+    height: 250px;
+    background: rgb(44, 45, 46);
+    overflow: hidden;
+}
+
+#estado span {
+    font-size: 18px;
+    color: yellowgreen;
+    font-weight: bold;
+    font-weight: bold;
+    text-align: center;
+}
+
+.vacio {
+    width: 70%;
+    height: 250px;
+    background: rgb(76, 151, 226);
+}

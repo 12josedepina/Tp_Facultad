@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer03Formularios</title>
+
+    <style>
+        li{
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section>
+
+        <h1>Formulario para entradas sin validacion</h1>
+
+        <form action="./respuestaFormulario.html" target="_blank" method="GET">
+            <ul>
+                <li>
+                    <label style="font-weight: bold" for="apellido"> Apellido:</label><br>
+                    <input type="text" id="apellido" name="apellido" autofocus = "autofocus">
+                </li>
+                <li>
+                    <label tyle="font-weight: bold" for="contraseña">Contraseña:</label><br>
+                    <input type="password" id="contraseña" name="contraseña">
+                </li>
+                <li>
+                    <label  for="oculto">Oculto:</label><br>
+                    <input type="hidden" id="oculto" name="oculto">
+                </li>
+                <li>
+                    <label for="Campo deshabilitado">Campo deshabilitado:</label><br>
+                    <input type="text" id="campodeshabilitado" name="campodeshabilitado" disabled value="Valor deshabilitado" readonly>
+                </li>
+                <li>
+                    <label for="Campo de solo lectura">Campo de solo lectura</label><br>
+                    <input type="text" value="ValorSoloLectura" readonly />
+                </li>
+                <li>
+                    <label for="practicadeportes">Practica deportes</label><br>
+                    <input type="checkbox" id="Practicadeportes" value="si">
+                </li>
+                <li>
+                    <label for="practicamusical">Practica musical</label><br>
+                    <input type="checkbox" id="Practicamusical" value="si">
+                </li>
+                <li>
+                    <label for="practicadepintura artistica">Practica de pintura artistica</label><br>
+                    <input type="checkbox" id="practicadepinturaartistica" value="si">
+                </li>
+               <li>
+                   <label for="sexo">Sexo:</label><br>
+                   Masculino<input type="radio" id="sexo" name="sexo" value="m" checked="checked">
+                   Femenino <input type="radio" id="sexo" name="sexo" value="f">
+                </li>
+                <li>
+                    <label for="estudios cursados">Estudios Cursados</label><br>
+                    <select name="estudios" id="estudios">
+                        <option value="pri" selected="selected" >Primarios</option>
+                        <option value="sec" >Secundarios</option>
+                        <option value="ter" >Terciarios</option>
+                        <option value="uni" >Universitarios</option>
+                        <option value="pos" >Postgrado</option>
+                    </select>
+
+                </li>
+
+                <li>
+                    <label for="fecha y hora">Fecha y hora</label><br>
+                    <input type="date" name="fecha">
+                    <input type="time" name="hora">
+                </li>
+
+                <li>
+                    <label for="color">Color</label><br>
+                    <input type="color">
+                </li>
+
+                <li><input type="submit" value="Enviar formulario sin validacion" /></li>
+                
+                <li><input type="reset" value="Reset a valores predeterminados" /></li>
+
+                  
+            </ul>
+
+        </form>
+        
+    </section>
+
+    <section>
+        <h1>Formulario para entradas con validacion</h1>
+        <form action="./respuestaFormulario.html" target="_blank" method="GET">
+            <ul>
+                <li>Comentario(validacion por requerido):<br><input type="text" name=" Comentario" required=required /></li>
+                <li>Email con doble validacion(x@x y required):<br><input type="email"name="user-email" placeholder="texto@texto"/></li>
+                <li>Numero entero limitado(validacion por tipo numerico y cotas):<br><input type="number" min="1"max="5"name="numeroEntero"/></li>
+                <li>Numero decimal:<br><input type="number" min="0" max="9" name="numeroReal" step="0.5"/></li>
+                <li>URL(validacion por requerido,escribir http://):<br><input type="url" name="sitio"placeholder="http://xxx"/></li>
+                <li>Pattern de validacion:<br><input type="text" pattern="[a-z]{3}[1-2]{2}"name="mascara" title="3 letras y dos numeros que sean 1 o 2 solamente"/></li>
+                <li>Pattern de validacion:<br><input type="text" min="0" max="12" pattern="(+54 11 44445555)" name="numeroEntero" placeholder="(+54) 11 44445555"/></li>
+
+                <li><input type="submit" value="Enviar formulario sin validacion" /></li>
+                
+                <li><input type="reset" value="Reset a valores predeterminados" /></li>
+            </ul>
+        </form>
+    </section>
+    
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelectoresDeClase</title>
+
+    
+    <style>
+        
+        span.claseDestacado {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-bottom: 60px;
+        }
+
+        p.claseAcotacion {
+            text-align: center;
+            font-size: 18px;
+            color:rgb(45, 121, 219);
+            font-style: italic;
+            border-style: solid;
+            border-width: thin;
+            border-color: rgb(22, 72, 146);
+            margin-bottom: 60px;
+            font-weight: bold;
+
+        }
+
+        p.claseDestacado {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-bottom: 60px;
+
+        }
+
+
+        p.claseAyuda {
+            width: 50%;
+            text-align: center;
+            font-size: 18px;
+            color: orange;
+            font-style: italic;
+            border-style: solid;
+            border-width: thin;
+            border-color: rgb(232, 235, 42);
+            margin-bottom: 60px;
+            font-weight: bold;
+        }
+
+        p.claseContenidoComun {
+            font-style: inherit;
+            font-size: 14px;
+            margin-bottom: 60px;
+
+        }
+
+        p#idUnico {
+            width: 30%;
+            text-align: center;
+            font-size: 15px;
+            color: rgb(235, 6, 6);
+            font-style: italic;
+            border-style: solid ;
+            border-width: thin;
+            border-color: rgb(228, 31, 31);
+            margin-bottom: 60px;
+            font-weight: bold;
+
+        }
+
+        .caja1 {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: left;
+        }
+
+        .imagenA150 {
+            width: 50%;
+            height: 700px;
+
+        }
+
+        .imagenA150 img {
+            width: 100%;
+            height: 680px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>A partir de esta pagina no usaremos mas el atributo style en ningun etiqueta.</h1>
+        <h1>Todo el estilo sera definido dentro de una etiqueta style,anidada en la etiqueta head del documento.</h1>
+        <h1>Todos los parrafos tienen un default como estilo que incluyen en margin-bottom para separarlos mas entre
+            ellos.</h1>
+
+    </header>
+
+    <section>
+        <article>
+            <p>Este parrafo contiene un grupo de palabras delimitado por una etiqueta "span".El comienzo es aqui
+                <span class="claseDestacado">grupo de palabras destacadas con el estilo claseDestacado</span> <br><br><br>
+            </p>
+
+        </article>
+
+
+        <article>
+            <p class="claseAcotacion">Este Parrafo toma el estilo definido en la etiqueta style en el header del
+                documento como "class=ClaseAcotacion" jñlkjñl jñlkjñl ñlkj jñlkjñljñlkjñl jñlkjñl ñlkj jñlkjñl jñlkjñl
+                jñlkjñl jñlkjñljñlkjñljñlkjñl <br> <br> <br>
+                fjdlñdkffdf jdlñdkffdf dkffdf fjdlñdkffdf dlñdkffdf fjdlñdkffdf fjdlñdkffdf af</p>
+        </article>
+
+
+
+
+        <article>
+            <p class="claseDestacado">Este parrafo toma el estilo definido en la etiqueta style en el header del
+                documento como class="claseDestacado"</p>
+        </article>
+
+
+
+        <article>
+            <p class="claseAyuda">Este parrafo toma el estilo definido en la etiqueta style en el header del documento
+                como <br>
+                class="claseAyuda"</p>
+        </article>
+
+
+        <article>
+            <p class="claseContenidoComun">Este parrafo toma el estilo definido en la etiqueta style ene el header del
+                documento como class
+                ="ClaseContenidoComun"</p>
+        </article>
+
+
+        <article>
+            <p id="idUnico">Parrafo formateado por un estilo particular definido en el style del documento <br> para un
+                parrafo especifico
+                id="idUnico"</p>
+        </article>
+
+    </section>
+
+
+    <div class="caja1">
+
+        <h1>Todas las imagenes con class="imagenA150" en esta pagina se encuentran limitadas al 50% del ancho del
+            viewport <br> mas alla de su tamaño real en pixeles:</h1>
+
+        <div class="imagenA150">
+
+            <img src="./casa.jpg" alt="">
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

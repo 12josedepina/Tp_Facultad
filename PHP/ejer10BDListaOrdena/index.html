@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListaOrdenada</title>
+    <link rel="stylesheet" href="./estilo.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="cabezera">
+            <header>
+                <h3>Articulos</h3>
+            </header>
+
+            <div class="botones">
+                <div class="entrada">
+                    <p>Orden</p>
+                    <input type="text" id="columnToOrder" class="im">
+                </div>
+
+                <div>
+                    <button id="cargar-articulos" onclick="cargaTabla()" class="btn">Cargar Datos</button>
+                </div>
+                <div>
+                    <button id="limpiar-articulos" class="btn">Vaciar Datos</button>
+                </div>
+
+            </div>
+        </div>
+
+        <table id="tabla-articulos">
+            <thead>
+                <tr>
+                    <th data-campo='Cod' id="codigo">CodArt</th>
+                    <th data-campo='Fam' id="familia">FAMILIA</th>
+                    <th data-campo='Um' id="unidad_medida">UM</th>
+                    <th data-campo='Des' id="descripcion">DESCRIPCION</th>
+                    <th data-campo='Fa' id="fecha_alta">FECHA ALTA</th>
+                    <th data-campo='Sck' id="stock">SALDO STOCK</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-articulos">
+
+            </tbody>
+
+
+            <tfoot>
+                <tr>
+                    <th campo-dato='Cod'>$ codArt</th>
+                    <th campo-dato='Fam'>$ familia</th>
+                    <th data-campo='Um'>$ UM</th>
+                    <th data-campo='Des'>$ descripcion</th>
+                    <th data-campo='Fa'>$ fecha Alta</th>
+                    <th campo-dato='Sck'>$ saldo STOCK</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <footer>
+            <div id="totalRegistros"></div>
+            <h3>Pie</h3>
+        </footer>
+
+    </div>
+
+    <script src="../jquery.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#cargar-articulos").click(function() {
+                cargaTabla();
+            });
+
+            $("#limpiar-articulos").click(function() {
+                clearTable();
+            });
+
+        });
+
+
+        function cargaTabla(campo) {
+            $("#tbody-articulos").empty();
+            $("#tbody-articulos").html("<p>Esperando respuesta.......</p>");
+
+            varobjAjax = $.ajax({
+                type: "get",
+                url: "salidaJson.php",
+                data: {
+                    order: campo
+                },
+
+                success: function(respuestaDelServer, estado) {
+
+
+                    objJson = JSON.parse(respuestaDelServer);
+                    
+                    console.log(objJson);
+                    
+                    $("#tbody-articulos").empty();
+                    
+                    
+                    objJson.forEach(function(argValor, argIndice) {
+                        var tableRow = document.createElement("tr");
+
+                        var codeArtTd = document.createElement("td");
+
+                        codeArtTd.innerHTML = argValor.CodArt;
+
+                        var familiaTd = document.createElement("td");
+
+                        familiaTd.innerHTML = argValor.Familia;
+
+                        var descripcionTd = document.createElement("td");
+
+                        descripcionTd.innerHTML = argValor.UM;
+
+                        var umTd = document.createElement("td");
+
+                        umTd.innerHTML = argValor.Descripcion;
+
+                        var fechaAltaTd = document.createElement("td");
+
+                        fechaAltaTd.innerHTML = argValor.FechaAlta;
+
+                        var saldoStockTd = document.createElement("td");
+
+                        saldoStockTd.innerHTML = argValor.SaldoStock;
+
+                        tableRow.appendChild(codeArtTd);
+                        tableRow.appendChild(familiaTd);
+                        tableRow.appendChild(descripcionTd);
+                        tableRow.appendChild(umTd);
+                        tableRow.appendChild(fechaAltaTd);
+                        tableRow.appendChild(saldoStockTd);
+
+                        document.getElementById("tbody-articulos").appendChild(tableRow);
+                    }); //
+
+                    $("#totalRegistros").html("Nro de registros: " + objJson.length);
+                }
+            });
+
+        }
+
+
+        $(document).ready(function() {
+            $("#codigo").click(function() {
+                cargaTabla("codigo");
+                cargarInput($(this).html());
+            });
+            $("#familia").click(function() {
+                cargaTabla("familia");
+                cargarInput($(this).html());
+            });
+            $("#unidad_medida").click(function() {
+                cargaTabla("unidad_medida");
+                cargarInput($(this).html());
+            });
+            $("#descripcion").click(function() {
+                cargaTabla("descripcion");
+                cargarInput($(this).html());
+            });
+            $("#fecha_alta").click(function() {
+                cargaTabla("fecha_alta");
+                cargarInput($(this).html());
+            });
+            $("#stock").click(function() {
+                cargaTabla("stock");
+                cargarInput($(this).html());
+            });
+
+        });
+
+        function cargarInput(campoTabla){
+            $("#columnToOrder").val(campoTabla);
+        }
+
+        function clearTable() {
+            $("#tbody-articulos").empty();
+        }
+    </script>
+
+
+
+</body>
+
+</html>

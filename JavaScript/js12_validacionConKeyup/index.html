@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion-Con-KeyUp</title>
+    <link rel="stylesheet" href="./estilos.css">
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Ejer Validacion de un INPUT</h1>
+    </header>
+
+    <div class="formulario">
+
+        <form id="miform" name="miform" action="">
+            <label for="dia">Ingrese el dia del mes:</label>
+            <br>
+            <br>
+            <input type="number" id="dia" title="complete este campo" min="1" max="31" required>
+            <br>
+            <br>
+            <label for="">Ingrese el mes:</label>
+            <br>
+            <br>
+            <input type="number" id="mes" title="complete este campo" min="1" max="12" required>
+            <br>
+
+        </form>
+
+        <div class="boton">
+            <button class="button">Enviar</button>
+            <button id="reset" class="button">Reset</button>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("dia").onkeyup = function() {
+            var inpDay = document.getElementById("dia");
+            if (!inpDay.checkValidity()) {
+
+                alert("El Dia debe estar entre 1 y 31");
+            }
+        }
+
+        document.getElementById("mes").onkeyup = function() {
+            var inpDay = document.getElementById("mes");
+            if (!inpDay.checkValidity()) {
+
+                alert("El Mes debe estar entre 1 y 12");
+            }
+        }
+
+        document.getElementById("reset").onclick = function() {
+            document.getElementById("miform").reset();
+        }
+    </script>
+
+
+</body>
+
+</html>

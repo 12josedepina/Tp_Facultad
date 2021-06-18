@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer01HtmlBasico</title>
+    <link rel="stylesheet" href="ejer01Html/estilos.css">
+
+    <style>
+        h1 {color: aquamarine;}
+        h2,h3,h4 {color: rgb(46, 145, 148);}
+        a {color: coral;}
+        p,li {color: cornflowerblue;}
+        .parrafo{color: lightcoral;}
+        
+    </style>
+    
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Primer parrafo corto (incluye el retorno de carro)</h1><br>
+            <h2>Segundo Parrafo corto(incluye el retorno de carro)</h2><br>
+            <h2>Grupo de elementos de navegacion</h2>
+        </header>
+    
+    </div>
+
+    <div>
+        <nav>
+            <ul>
+                
+                <li><a href="https://espanol.yahoo.com/">Yahoo</a></li>
+                <li><a href="https://www.google.com.ar/">Google</a></li>
+                <li><a href="https://www.youtube.com/">youtube</a></li>
+                <br>
+                
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div class="contenedor">
+        <div class="inner">
+            <p ><a href="ejer01Html/OtraPaginaenUnaMismaVentana.html">Enlace a otra pagina dentro de la misma pestaña</a></p>
+        </div>
+        <div class="inner">
+            <p ><a href="ejer01Html/OtraPaginaEnUnaNuevaVentana.html" target="_blank">Enlace a otra pagina en nueva pestaña</a></p>
+        </div>
+        <div class="inner" >
+            <p ><a href="#ancla">Ancla a otro punto de esta pagina</a></p>
+        </div>
+    </div>
+   
+
+        <section>
+            <div>
+                <H2>Cuerpo principal del Contenido</H2>
+            </div>
+
+           
+            <article>
+                
+                <p>
+                    La etiqueta main es en HTML5 una etiqueta semantica.Esto quiere decir que tiene que ver con el significado de lo contenido dentro de ella.Define el contenido principal de la pagina.Unicamente puede haber una sola etiqueta como esta en<br>
+                    todo el documento.
+                    El contenido escrito aqui dentro no se repite en el resto del sitio (todo lo contrario  a los encabezados de pagina,los menues de navegacion y los pies de pagina).Es usado por buscadores para indexar.<br>
+                    Conviene usar aqui textos que ayuden a encontrar la pagina luego de procesos de indexacion de los buscadores.
+                </p>
+            </article>
+
+            <h3>Seccion etiquetas semanticas estructurales mas importantes:</h3>
+
+            <ul>
+                <li>HEADER</li>
+                <li>FOOTER</li>
+                <li>SECTION</li>
+                <li>ARTICLE</li>
+                <li>NAV</li>
+                <li>ADDRESS</li>
+                
+            </ul>
+            <p>Las etiquetas semanticas estructurales estan relacionadas directamente con el significado del contenido y no con los estilos ni las posiciones dentro del documento.</p>
+
+            <h3>Reglas para etiquetas semanticas:</h3>
+
+            <ul>
+                <li>Los distintos tipos de contenido se puede asociar a las etiquetas SECTION</li>
+                <li>Las unidades de contenido se asocias a las etiquetas ARTICLE o sea que un SECTION anida multiples ARTICLES.</li>
+                <li>Las etiquetas HEADER Y FOOTER pueden ser anidadas dentro HEADER o FOOTER Osea un FOOTER podria anidar otro HEADER y FOOTER.</li>
+                <li>La etiqueta NAV debe ser unica en el documento y corresponde a los elementos de navegacion del documento</li>
+                <li>Reservar etiqueta h1 para usar dentro de etiquetas top level como main,header o footer.</li>
+            </ul>
+
+            <h3>Preguntas</h3>
+
+            <ol >
+                
+                <li>Dar un par de ejemplos de uso de etiquetas meta.
+                    <p class="parrafo">Las etiquetas meta identifican metadata en este caso el atributo http-equiv con valor Content-type y el atributo content Con el valor utf-8<br>
+                    Le dicen al navegador que se trata de encabezado http llamado Content-type y que su contenido o valor es el código de lenguaje Español utf-8</p>
+                </li>
+                <li>Nombrar al menos 2 atributos aplicables a la etiqueta HTML.
+                    <p class="parrafo">Lang=el atributo que indica el lenguaje<br>
+                        dir= este atributo indica la dirección en que se escribe el texto <br>
+                        ltr: significa izquierda a derecha<br>
+                        rtl: significa derecha a izquierda.</p>
+                </li>
+                <li>Como se relaciona un header http con la etiqueta head de HTML?
+                    <p class="parrafo">Los HTTP headers son la parte central de los HTTP requests y responses, y transmiten información acerca del navegador del cliente, de la página solicitada, del servidor, etc.<br>
+                        Los head provee información general (metadatos) acerca del documento, incluyendo su título y enlaces a scripts y hojas de estilos.</p>
+                </li>
+                <li>Que es UTF8?
+                    <p class="parrafo">UTF-8 (8-bit Unicode Transformation Format) es un formato de codificación de caracteres Unicode e ISO 10646 que utiliza símbolos de longitud variable.</p>
+                </li>
+                <li>Que atributo HTML sirve para aplicar estilo, a que etiqueta es aplicable?
+                    <p class="parrafo"> El atributo style es un atributo que se utiliza en las etiquetas HTML para incrustar código CSS directamente en la propia etiqueta.<br>
+                        se le aplica el estilo,a un párrafo (p),a una capa con salto de línea (div) o a una capa sin efecto (span), etc.
+                    </p>
+                </li>
+                <li>Donde se indica que un enlace debe ubicar el documento en una nueva pestaña?
+                    <p class="parrafo">En la etiqueta (a) dentro de ella esta el atributo target"_blank">.</p>
+                </li>
+                <li>Explicar cuando usarían etiquetas semánticas y con que propósito.
+                    <p class="parrafo">Las etiquetas semánticas ayudan a definir la estructura del documento y permiten que las páginas web sean mejor indexadas por los buscadores.<br>
+                        Una etiqueta se califica como semántica si tiene que ver el significado, es decir, si nos informa sobre lo que trata su contenido.<br> 
+                        Por ejemplo, la etiqueta SECTION nos dice que contiene una sección o capítulo dentro de la página. Frente a las etiquetas semánticas tenemos<br>
+                        otros tipos de etiquetas como las que afectan al formato, como UL, a multimedia, como VIDEO, etc.</p>
+                </li>
+                <li>¿Que atributos de estilo básicos aplicarían a una tabla? Explicar.
+                    <p class="parrafo"> align: para alinear horizontalmente.<br>
+                        background: Nos permite colocar un fondo para la tabla a partir de un enlace a una imagen.<br>
+                        border: Define el número de pixels del borde principal.<br>
+                        bordercolor: Define el color del borde.<br>
+                        cellpadding: Define, en pixels, el espacio entre los bordes de la celda y el contenido de la misma.<br>
+                        cellspacing: Define el espacio entre los bordes (en pixels).<br>
+                        height: Define la altura de la tabla en pixels o porcentaje.<br>
+                        width: Define la anchura de la tabla en pixels o porcentaje.<br></p>
+                </li>
+                <li>¿Que diferencia existe entre la etiqueta body de un documento HTML y el body del protocolo HTTP?
+                    <p class="parrafo">El elemento (body) de HTML representa el contenido de un documento HTML. Solo puede haber un elemento (body) en un documento.<br>
+                        Un campo de cuerpo de mensaje opcional ('body' en inglés) que lleva los datos asociados con la petición (como contenido de un formulario HTML),<br> 
+                        o los archivos o documentos asociados a una respuesta (como una página HTML, o un archivo de audio, vídeo)</p>
+                </li>
+                <li>¿Que atributos marcan la agrupación de celdas de una tabla?. ¿A que etiquetas se aplican?
+                    <p class="parrafo">Los atributos colspan(columna) y rowspan(fila) permiten unir una celda con las celdas contiguas, tanto horizontal como verticalmente.<br>
+                        El valor de colspan indica la cantidad de celdas unidas en horizontal y el valor de rowspan indica la cantidad de celdas unidas en vertical.<br>
+                        A la etiqueta (TD) es la que define la celda de una tabla que contiene datos.<br></p>
+                </li>
+            </ol>
+
+        </section>
+
+        <br>
+
+
+        <section>
+
+            <h4>Section de imagenes</h4>
+
+            <P>Cuadro "del EL Greco"</P><br>
+
+            <img  alt="" src="../HTML/ejer01Html/greco.jpg"  />
+
+            <P>Cuadro "Sagrada Familia" De El Greco</P><br>
+
+            <img alt=" Foto de el greco" style="width:150px;height:500px" src="../HTML/ejer01Html/greco.gif"/>
+            <img alt=" Foto de el greco" style="width:250px;height:500px" src="../HTML/ejer01Html/greco.gif"/>
+            <img alt=" Foto de el greco" style="width:380px;height:500px" src="../HTML/ejer01Html/greco.gif"/>
+            <img alt=" Foto de el greco" style="width:480px;height:500px" src="../HTML/ejer01Html/greco.gif"/>
+            <img alt=" Foto de el greco" style="width:580px;height:500px" src="../HTML/ejer01Html/greco.gif"/>
+             
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h4>Section de video</h4>
+            <video src="./ejer01Html/wildLife1.mp4.mp4" width=520px  height=340px controls poster="vistaprevia.jpg"></video>
+            
+        </section>
+
+        <section>
+            <h3 id="ancla">Anclajes</h3>
+            <p>Punto de anclado</p>
+        </section>
+
+        <footer>
+            <h3>Datos del alumno</h3>
+            <p>Jose Vladimir Quispe</p>
+           
+        </footer>
+
+        <address>
+            <a href="mailto:quispevladimir5@gmail.com">quispevladimir5@gmail.com</a>
+
+        </address>
+
+</body>
+
+</html>
+
+

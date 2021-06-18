@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .botones {
+        width: 100%;
+        display: block;
+        padding: 10px;
+    }
+    
+    .btn {
+        padding: .375rem .75rem;
+        border-radius: .25rem;
+        background-color: #007bff;
+        color: #fff;
+        transition: background-color .15s ease-in-out;
+    }
+    
+    .btn:hover,
+    .btn:focus {
+        background-color: #0069d9;
+    }
+    
+    .btn:active {
+        background-color: #0062cc;
+    }
+</style>
+
+<body>
+    <div class="botones">
+        <button id="youtube" class="btn">Youtube</button>
+        <button id="source" class="btn">Source force</button>
+        <button id="gmail" class="btn">Gmail</button>
+    </div>
+
+    <script>
+        document.getElementById("youtube").onclick = function() {
+            location.href = 'https://www.youtube.com'
+        }
+
+        document.getElementById("source").onclick = function() {
+            location.href = 'https://www.sourceforge.net'
+        }
+
+        document.getElementById("gmail").onclick = function() {
+            location.href = 'https://www.gmail.com'
+        }
+    </script>
+</body>
+
+</html>

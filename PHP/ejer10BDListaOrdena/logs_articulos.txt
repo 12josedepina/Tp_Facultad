@@ -1,0 +1,2 @@
+Conexión a base de datos exitosa!!
+SELECT * FROM articulos order by familia

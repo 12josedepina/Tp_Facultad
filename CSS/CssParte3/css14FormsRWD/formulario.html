@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormsRWD</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="cabezera">
+            <h1>Formulario</h1>
+        </header>
+
+        <form id="formulario" action="./respuestaFormulario.html" target="_blank" method="GET">
+
+            <div class="item">
+                <label for="apellido"> Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido">
+            </div>
+            <div class="item">
+                <label for="apellido"> Nombre:</label><br>
+                <input type="text" id="apellido" name="apellido">
+            </div>
+            <div class="item">
+                <label for="contraseña">Contraseña:</label><br>
+                <input type="password" id="contraseña" name="contraseña">
+            </div>
+            <div class="item">
+                <label for="Campo deshabilitado">Campo deshabilitado:</label><br>
+                <input type="text" id="campodeshabilitado" name="campodeshabilitado" disabled value="Valor deshabilitado" readonly>
+            </div>
+            <div class="item">
+                <label for="fecha y hora">Fecha y Hora :</label><br>
+                <input type="date" name="fecha">
+                <input type="time" name="hora">
+            </div>
+            <div class="item">
+
+                <label for="dni">DNI:</label><br>
+                <input type="text" pattern=[0-9]{9} name="dni">
+            </div>
+            <div class="item">
+                <label for="">Actividades Extracurriculares</label><br><br>
+                <label for="musica">Musica: <br></label>
+                <input type="checkbox" id="musica" value="si"><br>
+                <label for="pintura-artistica">Pintura Artistica: <br></label>
+                <input type="checkbox" id="pintura-artistica" value="si"><br>
+                <label for="deportes">Deportes:</label><br>
+                <input type="checkbox" id="deportes" value="si"><br>
+                <label for="teatro">Teatro:</label><br>
+                <input type="checkbox" id="teatro" value="si"><br>
+
+            </div>
+
+            <div class="item">
+                <label for="sexo">Sexo:</label><br><br> Masculino <br>
+                <input type="radio" id="sexo" name="sexo" value="m" checked="checked"> <br> Femenino <br><input type="radio" id="sexo" name="sexo" value="f">
+            </div>
+            <div class="item">
+                <label for="oculto">Vacio:</label><br>
+                <input type="hidden" id="oculto" name="oculto">
+            </div>
+            <div class="item">
+                <label for="estudios cursados">Estudios Cursados</label><br>
+                <select name="estudios" id="estudios">
+                    <option value="pri" selected="selected">Primarios</option>
+                    <option value="sec">Secundarios</option>
+                    <option value="ter">Terciarios</option>
+                    <option value="uni">Universitarios</option>
+                    <option value="pos">Postgrado</option>
+                </select>
+
+            </div>
+
+
+            <div class="item2">
+                <label for="area">Area de Desempeño</label><br>
+                <select name="area" id="area">
+                    <option value="adm" selected="selected">Administracion</option>
+                    <option value="inf">Informatica</option>
+                    <option value="sal">Salud</option>
+                    <option value="vys">Venta y Servicios</option>
+                </select>
+            </div>
+            <div class="item2">
+                <label for="turno">Turno</label><br>
+                <select name="turno" id="turno">
+                    <option value="man" selected="selected">Mañana</option>
+                    <option value="tar">Tarde</option>
+                    <option value="noc">Noche</option>
+                </select>
+            </div>
+            <div class="item2">
+                <label for="conduce">Conduce</label><br><br> Si <br>
+                <input type="radio" id="conduce" name="conduce" value="si" checked="checked"> <br> No <br><input type="radio" id="conduce" name="conduce" value="no">
+
+            </div>
+            <div class="barraControl">
+                <div><input class="boton" type="submit" value="Enviar" />
+                </div>
+                <div><input class="boton" type="reset" value="Reset" />
+                </div>
+            </div>
+
+            <footer>
+                <h1>Pie de Formulario</h1>
+            </footer>
+
+
+        </form>
+    </div>
+
+</body>
+
+</html>

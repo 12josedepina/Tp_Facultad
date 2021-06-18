@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css07DivsEnFila</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+        }
+
+        #contenedor {
+            display: flex;
+            background-color: lightblue;
+            height: 100%;
+            max-width: 80%;
+            margin: auto;
+            flex-wrap: wrap;
+
+        }
+
+        .box1 {
+            background: linear-gradient(to bottom, orange, white, pink);
+            box-shadow: 16px 8px 2px rgba(0, 0, 0, 0.3);
+            width: 20%;
+            height: 100px;
+            border: 3px solid rgb(92, 89, 89);
+            border-radius: 10px;
+            margin: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box2 {
+            background: radial-gradient(ellipse farthest-corner, orange, white, pink);
+            box-shadow: 16px 8px 2px rgba(0, 0, 0, 0.3);
+            width: 20%;
+            height: 100px;
+            border: 3px solid rgb(92, 89, 89);
+            border-radius: 10px;
+            margin: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedor">
+        <div class="box1"><p>Texto en DIV1</p></div>
+        <div class="box2"><p>Texto en DIV2</p></div>
+        <div class="box1"><p>Texto en DIV3</p></div>
+        <div class="box2"><p>Texto en DIV4</p></div>
+        <div class="box1"><p>Texto en DIV5</p></div>
+        <div style="clear: both;"></div>
+    </div>
+
+</body>
+
+</html>

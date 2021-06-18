@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CentradoYPadding</title>
+    
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .caja2 {
+            width: 100%;
+            display: inline-block;
+
+        }
+
+        div.elementoCentrado {
+            margin: auto;
+            width: 50%;
+            background-color: lightblue;
+            position: relative;
+            bottom: -16px;
+            font-weight: bold;
+        }
+
+        div.elementoCentrado1 {
+            margin: auto;
+            width: 50%;
+            background-color: lightgreen;
+            padding-left: 10%;
+            padding-right: 10%;
+            font-weight: bold;
+
+
+        }
+
+        div.elementoCentrado2 {
+            margin: auto;
+            width: 50%;
+            background-color: rgb(212, 211, 112);
+            padding-left: 10%;
+            box-sizing: border-box;
+            position: relative;
+            top: -16px;
+            font-weight: bold;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Los siguientes elementos tienen un ancho del 50% de la ventana</h1>
+    </header>
+
+    <section class="caja2">
+        
+        <div class="elementoCentrado">
+            <article>
+                <p> Texto en interior <br>
+                    Texto en interior <br>
+                    Texto en interior <br>
+                    Texto en interior <br>
+                    Texto en interior <br>
+                    Texto en interior
+
+                </p>
+
+            </article>
+        </div>
+
+        <div class="elementoCentrado1">
+            <article>
+                <p> Texto en interior con padding y sin box_sizing <br>
+                    Texto en interior con padding y sin box_sizing <br>
+                    Texto en interior con padding y sin box_sizing <br>
+                    Texto en interior con padding y sin box_sizing <br>
+                    Texto en interior con padding y sin box_sizing
+                </p>
+            </article>
+        </div>
+
+        <div class="elementoCentrado2">
+            <article>
+                <p> Texto en interior con padding y con box-sizing <br>
+                    Texto en interior con padding y con box-sizing <br>
+                    Texto en interior con padding y con box-sizing <br>
+                    Texto en interior con padding y con box-sizing <br>
+                    Texto en interior con padding y con box-sizing
+                </p>
+            </article>
+        </div>
+        
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+* {
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(196, 235, 238);
+    margin-bottom: 30px;
+}
+
+.main {
+    margin: auto;
+    border: 2px solid #7C7A7A;
+    width: 30%;
+    min-height: 20vh;
+    text-align: left;
+    padding: 30px;
+    background: #65b7d8;
+    margin-top: 30px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type=txt] {
+    width: 40%;
+    margin: 5px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}

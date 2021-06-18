@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css08DivsInternoEnColumnas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+
+        }
+
+        .encolumnado {
+            background-color: rgb(255, 254, 181);
+            height: 100%;
+            max-width: 80%;
+            margin: auto;
+
+
+        }
+
+        .titulo {
+            font-size: 32px;
+            color: rgb(218, 181, 127);
+        }
+
+        .colum1 {
+            background: rgb(66, 147, 173);
+            width: 30%;
+            height: 650px;
+            margin: 10px;
+            float: left;
+            font-size: 18px;
+            color: blanchedalmond;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .colum1 img {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            display: block;
+            max-width: 100%;
+            height: auto;
+
+        }
+
+        .colum2 {
+            background: rgb(66, 147, 173);
+            width: 30%;
+            height: 200px;
+            margin: 10px;
+            padding: 50px;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: blanchedalmond;
+
+        }
+
+        .colum3 {
+            background: rgb(66, 147, 173);
+            width: 30%;
+            height: 200px;
+            margin: 10px;
+            padding: 50px;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: blanchedalmond;
+
+        }
+
+        .nuevaFila {
+            clear: both;
+            margin-bottom: 20px;
+        }
+
+        .colum4 {
+            background: rgb(66, 147, 173);
+            width: 30%;
+            height: 550px;
+            font-size: 18px;
+            color: blanchedalmond;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .colum4 img {
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="encolumnado">
+        <div class="titulo">
+            <h1>Encolumnado sin tablas</h1>
+        </div>
+
+
+        <div class="colum1">
+            <p>
+                1 Datos para incluir en esta columna,<br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna.La <br>
+                siguiente imagen queda marginada <br>
+                automaticamente y ocupa el maximo ancho <br>
+                posible dentro de la columna independientemente <br>
+                del ancho real de la foto.Obviamente el tamaño <br>
+                real deberia ser mayor que el maximo posible <br>
+                previsto en el mejor de los <br> casos(monitor de alta resolucion)
+            </p>
+            <div><img src="./ordenador.jpg" alt=""></div>
+
+
+        </div>
+
+        <div class="colum2">
+            <p> 2 Datos para incluir en esta columna, <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna</p>
+        </div>
+
+        <div class="colum2">
+            <p> 3 Datos para incluir en esta columna, <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna</p>
+            <div class="nuevaFila" style="clear: both;"></div>
+        </div>
+
+        <div class="colum3">
+            <p> 4 Datos para incluir en esta columna, <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna</p>
+
+        </div>
+
+        <div class="colum3">
+            <p> 5 Datos para incluir en esta columna, <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna</p>
+            <div class="nuevaFila" style="clear: both;"></div>
+        </div>
+
+        <div class="colum4">
+            <p> 6 Datos para incluir en esta columna, <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna <br>
+                Datos para incluir en esta columna</p>
+
+            <div><img src="../css09SelectoresDeEvento/mundo-flores.jpg" alt=""></div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

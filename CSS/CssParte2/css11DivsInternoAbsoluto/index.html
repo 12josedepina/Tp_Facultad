@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css11DivsInternoAbsoluto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        
+        }
+
+        .contenedor {
+            height: 1000px;
+            width: 80%;
+            margin: auto;
+            background-color: lightblue;
+            
+        }
+
+        .titulo {
+            font-size: 13px;
+
+        }
+
+        .cont1 {
+            background: rgb(54, 231, 172);
+            width: 15%;
+            height: 40%;
+            position: absolute;
+            top: 30%;
+            font-size: 1vw;
+            z-index: 3;
+
+        }
+
+        .cont2 {
+           
+            width: 40%;
+            height: 350px;
+            background: rgb(175, 221, 144);
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            font-size: 1vw;
+            z-index: 3;
+            padding-bottom: -10px;
+            overflow: auto;
+        }
+
+        .cont3 {
+            background: grey;
+            width: 20%;
+            height: 40%;
+            font-size: 1vw;
+            z-index: 3;
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            opacity: 0.5;
+            overflow: auto;
+            
+
+        }
+
+        
+
+
+        .banners1 img{
+            width: 30%;
+            height: 280px;
+            margin: 5px;
+            float: left;
+           
+        }
+
+        .banners2 img{
+            width: 30%;
+            height: 280px;
+            margin: 5px;
+            float: left;
+            
+        }
+
+        .banners3 img{
+            width: 30%;
+            height: 280px;
+            margin: 5px;
+            float: left;
+            
+        }
+       
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="titulo"><h1>Estructura de posicionamiento absoluto pero adaptable a la resolucion de pantalla.</h1></div>
+
+        <div class="cont1">
+            <h2>Contenedor <br>
+                interno 1.</h2>
+            <p>ad fasd asd asdf asdf asdf asd fasd
+                fasd asd asdf asdf asdf asd fasd asdf
+                fasd asd asdf asdf asdf asd fasd asdf
+                ad fasd asd asdf asdf</p>
+        </div>
+
+        <div class="cont2">
+            <h2>Contenedor interno 2</h2>
+            <div class="banners1"><img src="./castillo.jpg" alt=""></div>
+            <div class="banners2"><img src="./castillo.jpg" alt=""></div>
+            <div class="banners3"><img src="./castillo.jpg" alt=""></div>
+
+        </div>
+
+        <div class="cont3">
+            <h2>Contenedor interno3.</h2>
+            <p>ad fasd asd asdf adfs asd fasd fad fa
+                fasd asd asdf adfs asd fasd fad fa
+                fasd asd asdf adfs asd fasd fad fa
+                adf asdf asdf asd asdf fasdt adf
+            </p>
+            
+        </div>
+
+    </div>
+
+</body>
+
+</html>

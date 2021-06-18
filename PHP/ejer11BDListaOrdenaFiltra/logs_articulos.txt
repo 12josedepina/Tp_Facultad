@@ -1,0 +1,1 @@
+Conexión a base de datos exitosa!!\nSELECT * FROM articulos where unidad_medida LIKE '%kg%'

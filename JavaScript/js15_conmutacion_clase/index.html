@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conmutacion_clase</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Ejemplo de Cambios de estilo dinamicamente</h1>
+    </header>
+
+
+    <div id="milista">
+        <ul>
+            <span class="titulo">Lista con estilo</span>
+            <li>Texto1</li>
+            <li>Texto2</li>
+            <li>Texto3</li>
+        </ul>
+    </div>
+    <div class="botones">
+        <button id="tipo1" class="boton">Tipo 1</button>
+        <button id="tipo2" class="boton">Tipo 2</button>
+        <button id="tipo3" class="boton">Tipo 3</button>
+        <button id="tipo4" class="boton">Tipo 4</button>
+    </div>
+
+    <script>
+        document.getElementById("tipo1").onclick = function() {
+
+            var element = document.getElementById("milista");
+            element.setAttribute('class', 'caja1');
+
+        }
+
+        document.getElementById("tipo2").onclick = function() {
+
+            var element = document.getElementById("milista");
+            element.setAttribute('class', 'caja2');
+        }
+
+        document.getElementById("tipo3").onclick = function() {
+
+            var element = document.getElementById("milista");
+            element.setAttribute('class', 'caja3');
+
+        }
+
+        document.getElementById("tipo4").onclick = function() {
+
+            var element = document.getElementById("milista");
+            element.setAttribute('class', 'caja4');
+
+        }
+    </script>
+
+</body>
+
+</html>

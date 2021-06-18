@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcance</title>
+    <style>
+        .btn {
+            width: 25%;
+            padding: 5px;
+            margin-left: 60px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <button class="btn" onclick="incorrecta()" title="inicializa global desde adentro de una funcion con declaracion var">Inicializacion incorrecta</button>
+    <button class="btn" onclick="correcta()" title="inicializa variable global desde adentro de una asignacion sin declaracion var">Inicializacion correcta</button>
+    <button class="btn">Muestra variable global</button>
+</body>
+
+<script>
+    //Inicializacion incorrecta
+
+    function incorrecta() {
+        var m = prompt("Ingrese valor para la variable global: ");
+        alert("El valor de la variable local ingresada es: " + m);
+        alert("El tipo de la variable ingresada es: " + typeof m);
+    }
+
+    //Inicializacion correcta
+
+    var c;
+
+    function correcta() {
+        c = prompt("Ingrese valor para la variable global: ");
+        alert("El valor de la variable globals ingresada es: " + c);
+        alert("El tipo de la variable global ingresada es: " + typeof c);
+    }
+</script>
+
+</html>

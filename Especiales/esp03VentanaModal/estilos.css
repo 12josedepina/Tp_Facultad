@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto Slab;
+}
+
+.conteiner {
+    max-width: 100%;
+    min-height: 100vh;
+    background: rgb(74, 123, 139);
+}
+
+.principal {
+    width: 100%;
+}
+
+.boton-modal {
+    width: 100%;
+    height: 230px;
+    cursor: pointer;
+}
+
+.btn {
+    width: 250px;
+    height: 60px;
+    background-color: white;
+    color: black;
+    border: 2px solid #1a1b1a;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(102, 99, 99, 0.8);
+}
+
+.modal {
+    width: 800px;
+    height: 518px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: fixed;
+    margin-top: 40px;
+}
+
+.close-btn {
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 18px;
+    top: 3px;
+    right: 3px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    opacity: .2;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.close {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+}
+
+header h1 {
+    background: #2c3e50;
+    width: 100%;
+    height: 60px;
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.formulario {
+    width: 100%;
+    min-height: 200px;
+    background: rgb(161, 167, 159);
+}
+
+.form1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 200px;
+}
+
+.contenedor1 {
+    max-width: 400px;
+    display: grid;
+    padding: 40px;
+}
+
+.hijo {
+    max-width: 400px;
+}
+
+.contenedor2 {
+    max-width: 400px;
+    display: grid;
+    padding: 40px;
+}
+
+p {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inputFields {
+    display: inline-block;
+    font-size: 20px;
+    height: 45px;
+    width: 300px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: rgb(15, 14, 14);
+    outline: none;
+}
+
+.boton {
+    max-width: 400px;
+    display: block;
+}
+
+.join-btn {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(90, 194, 95, 0.932);
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.join-btn:hover {
+    background: rgba(20, 20, 20, .8);
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+}
+
+footer h1 {
+    background: #2c3e50;
+    width: 100%;
+    height: 60px;
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.inputFields1 {
+    display: inline-block;
+    font-size: 22px;
+    height: 45px;
+    width: 300px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: rgb(15, 14, 14);
+    outline: none;
+}
