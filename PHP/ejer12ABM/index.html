@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista</title>
-    <link rel="stylesheet" href="./estile.css">
+    <link rel="stylesheet" href="./estilo.css">
 </head>
 
 <body>
@@ -30,51 +30,61 @@
                 </div>
 
                 <div>
-                    <button id="alta" class="btn">Alta Registro</button>
+                    <button id="mostrar" onclick=mi_funcion() class="btn">Alta Registro</button>
+                </div>
+
+                <div>
+                    <button id="alta" id="mostrar" class="btn">Cerrar Sesion</button>
                 </div>
 
             </div>
+
         </div>
 
-        <table id="tabla-articulos">
-            <thead>
-                <tr>
-                    <th data-campo='Cod'>CodArt <br>
-                        <input type="text" class="filtro" id="codigo">
-                    </th>
+        <section>
+            <table id="tabla-articulos">
+                <thead>
 
-                    <th data-campo='Fam'>FAMILIA<br>
-                        <input type="text" class="filtro" id="familia">
-                    </th>
+                    <tr>
+                        <th data-campo='id' scope="col">Numero de Documento<br>
+                            <input type="text" class="filtro" id="numero_documento">
+                        </th>
+                        <th data-campo='id' scope="col">Tipo de Documento<br>
+                            <input type="text" class="filtro" id="tipo_Documento">
+                        </th>
 
-                    <th data-campo='Um'>UM<br>
-                        <input type="text" class="filtro" id="unidad_medida">
-                    </th>
-
-                    <th data-campo='Des'>DESCRIPCION<br>
-                        <input type="text" class="filtro" id="descripcion"></th>
-
-                    <th data-campo='Fa'>FECHA ALTA<br>
-                        <input type="text" class="filtro" id="fecha_alta"></th>
-
-                    <th data-campo='Sck'>SALDO STOCK</th>
-                    <th data-campo='Sck'>PDF</th>
-                    <th data-campo='Sck'>MODIS</th>
-                    <th data-campo='Sck'>BAJAS</th>
-                </tr>
-            </thead>
-            <tbody id="tbody-articulos">
-
-            </tbody>
+                        <th data-campo='nom' scope="col">Nombre<br>
+                            <input type="text" class="filtro" id="nombre">
+                        </th>
+                        <th data-campo='ape' scope="col">Apellidos<br>
+                            <input type="text" class="filtro" id="apellido">
+                        </th>
+                        <th data-campo='fechaNac' scope="col">Fecha de Nacimiento<br>
+                            <input type="text" class="filtro" id="fechaNac">
+                        </th>
+                        <th data-campo='mail' scope="col">Email</th>
 
 
-            <tfoot>
-                <tr>
+                        <th data-campo='Pdf'>PDF</th>
+                        <th data-campo='modi'>MODIS</th>
+                        <th data-campo='baja'>BAJAS</th>
 
-                    <th campo-dato='Sck'>$ saldo STOCK</th>
-                </tr>
-            </tfoot>
-        </table>
+                    </tr>
+
+
+                </thead>
+
+                <tbody id="tbody-articulos"></tbody>
+
+                <tfoot>
+                    <tr>
+                        <th campo-dato='Sck'>$Email</th>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </section>
+
 
         <footer>
             <div id="totalRegistros"></div>
@@ -83,7 +93,122 @@
 
     </div>
 
+
+    <div id="contenedor-modal" class="modal" style="display: none;">
+
+
+        <header class="titulo">
+            <h1>Encabezado modal Formulario de alta</h1>
+            <span class="close-btn">
+                <button id="ocultar" class="close">X</button>
+                </span>
+
+        </header>
+
+        <div class="formulario">
+
+            <form id="form" action="" class="form1">
+                <div class="contenedor1">
+                    <div class="hijo">
+                        <p>ID:</p>
+                        <br>
+                        <input type="text" id="codArt" name="codArt" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="hijo">
+                        <p>Nombre:</p>
+                        <br>
+                        <input type="text" id="descripcion" name="descripcion" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="hijo">
+                        <p>Apellido:</p>
+                        <br>
+                        <input type="number" id="saldoStock" name="saldoStock" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="contenedor2">
+                    <div class="hijo">
+                        <p>Cuidad:</p>
+                        <br>
+                        <select name="article-select" id="articulo-select" class="inputFields1"></select>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="hijo">
+
+                        <p>Fecha de Nacimiento:</p>
+                        <br>
+                        <input type="date" id="FechaAlta" name="FechaAlta" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="hijo">
+                        <p>Email:</p>
+                        <br>
+                        <input type="number" id="saldoStock" name="saldoStock" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="hijo">
+                        <p>Archivo:</p>
+                        <br>
+                        <input type="file" id="archivo" name="archivo" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+
+
+
+                </div>
+                <div class="boton">
+                    <button class="join-btn " id="button">ENVIAR ALTA</button>
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+    </div>
+
     <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#ocultar").on('click', function() {
+                $("#contenedor-modal").hide();
+                return false;
+            });
+
+            $("#mostrar").on('click', function() {
+                $("#contenedor-modal").show();
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            function mi_funcion() {
+                $('#mostrar').attr("disabled", true);
+
+            }
+
+        });
+    </script>
+
+
 
     <script>
         $(document).ready(function() {
@@ -117,38 +242,57 @@
                     objJson = JSON.parse(respuestaDelServer);
                     console.log(objJson);
                     objJson.forEach(function(argValor, argIndice) {
+
                         var tableRow = document.createElement("tr");
 
-                        var codeArtTd = document.createElement("td");
+                        var numeroDocTd = document.createElement("td");
 
-                        codeArtTd.innerHTML = argValor.CodArt;
+                        numeroDocTd.innerHTML = argValor.;
 
-                        var familiaTd = document.createElement("td");
+                        var nombreTd = document.createElement("td");
 
-                        familiaTd.innerHTML = argValor.Familia;
+                        nombreTd.innerHTML = argValor.Nombre;
 
-                        var descripcionTd = document.createElement("td");
+                        var apellidosTd = document.createElement("td");
 
-                        descripcionTd.innerHTML = argValor.Um;
+                        apellidosTd.innerHTML = argValor.Apellidos;
 
-                        var umTd = document.createElement("td");
+                        var cuidadTd = document.createElement("td");
 
-                        umTd.innerHTML = argValor.Descripcion;
+                        cuidadTd.innerHTML = argValor.Cuidad;
 
-                        var fechaAltaTd = document.createElement("td");
+                        var fechaNacTd = document.createElement("td");
 
-                        fechaAltaTd.innerHTML = argValor.FechaAlta;
+                        fechaNacTd.innerHTML = argValor.FechadeNacimiento;
 
-                        var saldoStockTd = document.createElement("td");
+                        var emailTd = document.createElement("td");
 
-                        saldoStockTd.innerHTML = argValor.SaldoStock;
+                        emailTd.innerHTML = argValor.Email;
 
-                        tableRow.appendChild(codeArtTd);
-                        tableRow.appendChild(familiaTd);
-                        tableRow.appendChild(descripcionTd);
-                        tableRow.appendChild(umTd);
-                        tableRow.appendChild(fechaAltaTd);
-                        tableRow.appendChild(saldoStockTd);
+                        var pdfTd = document.createElement("td");
+
+                        pdfTd.innerHTML = "<button class='btCelda'>Doc.pdf</button>";
+
+                        var modiTd = document.createElement("td");
+
+                        modiTd.innerHTML = "<button id='mostrar' onclick=mi_funcion() class='btCelda' >Modi</button>";
+
+                        var borrarTd = document.createElement("td");
+
+                        borrarTd.innerHTML = "<button class='btCelda'>Borrar</button>";
+
+
+
+
+                        tableRow.appendChild(idTd);
+                        tableRow.appendChild(nombreTd);
+                        tableRow.appendChild(apellidosTd);
+                        tableRow.appendChild(cuidadTd);
+                        tableRow.appendChild(fechaNacTd);
+                        tableRow.appendChild(emailTd);
+                        tableRow.append(pdfTd);
+                        tableRow.append(modiTd);
+                        tableRow.append(borrarTd);
 
                         document.getElementById("tbody-articulos").appendChild(tableRow);
                     }); //

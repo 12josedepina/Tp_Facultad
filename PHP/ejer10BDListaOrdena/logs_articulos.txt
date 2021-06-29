@@ -1,2 +1,1 @@
-Conexión a base de datos exitosa!!
-SELECT * FROM articulos order by familia
+No se paso el parametro requrido order

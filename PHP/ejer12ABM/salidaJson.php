@@ -24,9 +24,9 @@ if ($mysqli->connect_errno) {
 }
 
 
-$query = "SELECT * FROM articulos";
+$query = "SELECT * FROM personas";
 
-$articulosObj = [];
+$personasObj = [];
 
 if ($resultado = $mysqli->query($query)) {
 
@@ -35,15 +35,15 @@ if ($resultado = $mysqli->query($query)) {
     
     while ($fila = $resultado->fetch_assoc()) {
     
-        $articulo  = new stdClass;
-        $articulo->CodArt = $fila["codigo"];
-        $articulo->Familia = $fila["familia"];
-        $articulo->Um = $fila["unidad_medida"];
-        $articulo->Descripcion = $fila["descripcion"];
-        $articulo->FechaAlta = $fila["fecha_alta"];
-        $articulo->SaldoStock = $fila["stock"];        
+        $persona  = new stdClass;
+        $persona->Id = $fila["codigo"];
+        $persona->Nombre = $fila["nombre"];
+        $persona->Apellidos = $fila["apellido"];
+        $persona->Cuidad = $fila["cuidad"];
+        $persona->FechadeNacimiento = $fila["fecha_de_nac"];
+        $persona->Email= $fila["email"];        
     
-        array_push($articulosObj,$articulo);
+        array_push($personasObj,$persona);
             
     }
 
@@ -51,7 +51,7 @@ if ($resultado = $mysqli->query($query)) {
     $resultado->free();
 }
 
-echo json_encode($articulosObj);
+echo json_encode($personasObj);
 
 /* cerrar la conexión */
 $mysqli->close();
