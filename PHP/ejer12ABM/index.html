@@ -52,7 +52,6 @@
                         <th data-campo='id' scope="col">Tipo de Documento<br>
                             <input type="text" class="filtro" id="tipo_Documento">
                         </th>
-
                         <th data-campo='nom' scope="col">Nombre<br>
                             <input type="text" class="filtro" id="nombre">
                         </th>
@@ -63,7 +62,6 @@
                             <input type="text" class="filtro" id="fechaNac">
                         </th>
                         <th data-campo='mail' scope="col">Email</th>
-
 
                         <th data-campo='Pdf'>PDF</th>
                         <th data-campo='modi'>MODIS</th>
@@ -228,6 +226,24 @@
             $("#tbody-articulos").empty();
         }
 
+        function cargarImagenDni(numeroDocumento){
+
+            $.ajax({
+                type: "get",
+                data: {numero_documento : numeroDocumento},
+                url: "cargar_imagen_dni.php",
+                success: function(respuestaDelServer, estado) {
+                    
+                    objetoDato =JSON.parse(respuestaDelServer);
+                    var imagen_frente_data = objetoDato.imagen_frente;
+                    $("#contenedor-modal").css("visibility","visible");
+                    $("#contenedor-modal").css("display","block");
+                    $("#contenedor-modal").empty();
+                    $("#contenedor-modal").html("<iframe width='100%' height='600px'src='data:image/jpeg;base64,"+imagen_frente_data+"'></iframe>");
+                }
+            });
+
+        }
 
         function cargaTabla() {
             $("#tbody-articulos").empty();
@@ -247,31 +263,31 @@
 
                         var numeroDocTd = document.createElement("td");
 
-                        numeroDocTd.innerHTML = argValor.;
+                        numeroDocTd.innerHTML = argValor.numero_documento;
+
+                        var tipoDocumentoTd = document.createElement("td");
+
+                        tipoDocumentoTd.innerHTML = argValor.tipo_documento_nombre;
 
                         var nombreTd = document.createElement("td");
 
-                        nombreTd.innerHTML = argValor.Nombre;
+                        nombreTd.innerHTML = argValor.nombre;
 
                         var apellidosTd = document.createElement("td");
 
-                        apellidosTd.innerHTML = argValor.Apellidos;
-
-                        var cuidadTd = document.createElement("td");
-
-                        cuidadTd.innerHTML = argValor.Cuidad;
+                        apellidosTd.innerHTML = argValor.apellido;
 
                         var fechaNacTd = document.createElement("td");
 
-                        fechaNacTd.innerHTML = argValor.FechadeNacimiento;
+                        fechaNacTd.innerHTML = argValor.fecha_nacimiento;
 
                         var emailTd = document.createElement("td");
 
-                        emailTd.innerHTML = argValor.Email;
+                        emailTd.innerHTML = argValor.email;
 
                         var pdfTd = document.createElement("td");
 
-                        pdfTd.innerHTML = "<button class='btCelda'>Doc.pdf</button>";
+                        pdfTd.innerHTML = "<button class='btCelda' onclick='cargarImagenDni(" + argValor.numero_documento +")'>Doc.pdf</button>";
 
                         var modiTd = document.createElement("td");
 
@@ -284,10 +300,10 @@
 
 
 
-                        tableRow.appendChild(idTd);
+                        tableRow.appendChild(numeroDocTd);
+                        tableRow.appendChild(tipoDocumentoTd);
                         tableRow.appendChild(nombreTd);
                         tableRow.appendChild(apellidosTd);
-                        tableRow.appendChild(cuidadTd);
                         tableRow.appendChild(fechaNacTd);
                         tableRow.appendChild(emailTd);
                         tableRow.append(pdfTd);

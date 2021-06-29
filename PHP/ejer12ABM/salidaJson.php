@@ -1,30 +1,12 @@
 <?php
 
-sleep(2);
 
-define("USER","uweixrhkpumlwxik");
-define("PASSWORD","mpZ3cUp30vUFrvGMcSfs");
-define("HOST","bwmfm2ptyu7kv8krlfru-mysql.services.clever-cloud.com");
-define("DB_NAME","bwmfm2ptyu7kv8krlfru");
-
-$fp = fopen('logs_articulos.txt', 'w');
-
-$mysqli = new mysqli(HOST,USER , PASSWORD, DB_NAME);
+include("conexion_db.php");
 
 
-if ($mysqli->connect_errno) {
-    
-    fwrite($fp, "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error);
+$fp = fopen('personas_log.txt', 'w');
 
-}else{
-    
-    fwrite($fp,"Conexión a base de datos exitosa!!");
-
-    
-}
-
-
-$query = "SELECT * FROM personas";
+$query = "SELECT p.*,t.nombre as tipo_documento_nombre,t.descripcion as tipo_documento_descripcion FROM personas p INNER JOIN tipo_documento t ON t.id = p.id_tipo_documento ";
 
 $personasObj = [];
 
@@ -36,12 +18,14 @@ if ($resultado = $mysqli->query($query)) {
     while ($fila = $resultado->fetch_assoc()) {
     
         $persona  = new stdClass;
-        $persona->Id = $fila["codigo"];
-        $persona->Nombre = $fila["nombre"];
-        $persona->Apellidos = $fila["apellido"];
-        $persona->Cuidad = $fila["cuidad"];
-        $persona->FechadeNacimiento = $fila["fecha_de_nac"];
-        $persona->Email= $fila["email"];        
+        $persona->numero_documento = $fila["numero_documento"];
+        $persona->tipo_documento_nombre = $fila["tipo_documento_nombre"];
+        $persona->tipo_documento_descripcion = $fila["tipo_documento_descripcion"];
+        $persona->nombre = $fila["nombre"];
+        $persona->apellido = $fila["apellido"];
+        $persona->fecha_nacimiento = $fila["fecha_de_nac"];
+        $persona->email = $fila["email"];
+        //$persona->imagen_frente = base64_encode($fila["imagen_frente"]);
     
         array_push($personasObj,$persona);
             
