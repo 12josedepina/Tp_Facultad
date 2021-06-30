@@ -190,7 +190,7 @@
 
         <div class="formulario">
 
-            <form id="form" action="" class="form1">
+            <form id="form" action="" class="form1" >
                 <div class="contenedor1">
                     <div class="hijo">
                         <p>Numero de Documento:</p>
@@ -354,6 +354,8 @@
 
         function modificarDatosPersona(){
 
+            
+            var imagen = $("#input-modificar-archivo").val();
             var nombre = $("#input-modificar-nombre").val();
             var apellido = $("#input-modificar-apellido").val();
             var numero_documento = $("#input-modificar-numero-documento").val();
@@ -366,6 +368,7 @@
                 type: "post",
                 url: "modificar_persona.php",
                 data: {
+                        //image_file: imagen,
                         nombre:nombre,
                         apellido:apellido,
                         numero_documento:numero_documento,
@@ -378,6 +381,22 @@
                     cargaTabla();
                 }
             });
+        }
+
+        function borrarPersona(numeroDocumento){
+            
+            $.ajax({
+                type: "post",
+                url: "borrar_persona.php",
+                data: {
+                        numero_documento:numeroDocumento
+                },
+                success: function (respuestaServer,estado) {
+                    alert(respuestaServer);
+                    cargaTabla();
+                }
+            });
+            
         }
 
         function modificarPersona(numeroDocumento){
@@ -482,7 +501,7 @@
 
                         var borrarTd = document.createElement("td");
 
-                        borrarTd.innerHTML = "<button class='btCelda'>Borrar</button>";
+                        borrarTd.innerHTML = "<button class='btCelda' onclick='borrarPersona("+  argValor.numero_documento  +")'>Borrar</button>";
 
 
 

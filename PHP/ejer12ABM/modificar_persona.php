@@ -5,7 +5,7 @@ include("conexion_db.php");
 
 $fp = fopen('actualizar_personas.txt', 'w');
 
-
+//$imagen_file = file_get_contents($_FILES["image_file"]["tmp_name"]);
 $nombre = $_POST["nombre"];
 $apellido   = $_POST["apellido"];
 $numero_documento = $_POST["numero_documento"];
@@ -27,6 +27,7 @@ if ($resultado = $mysqli->query($queryIdTipoDocumento)) {
 }
 
 $query = " UPDATE personas set "; 
+//$query.= " imagen_frente='".$imagen_file."' ";
 $query.= " nombre='".$nombre."' ";
 $query.= ",apellido='".$apellido."' ";
 $query.= ",fecha_de_nac='".$fecha_nacimiento."' ";
@@ -40,6 +41,7 @@ $persona  = new stdClass;
 if (!$mysqli->query($query)) {
 
     echo "ERROR AL INTENTAR ACTUALIZAR LOS DATOS DE LA PERSONA".$mysqli->error;
+    die();
 }
 
 echo "Se actualizo correctamente los datos";
