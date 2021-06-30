@@ -63,7 +63,7 @@
                         </th>
                         <th data-campo='mail' scope="col">Email</th>
 
-                        <th data-campo='Pdf'>PDF</th>
+                        <th data-campo='Pdf'>Imagen</th>
                         <th data-campo='modi'>MODIS</th>
                         <th data-campo='baja'>BAJAS</th>
 
@@ -108,7 +108,7 @@
             <form id="form" action="" class="form1">
                 <div class="contenedor1">
                     <div class="hijo">
-                        <p>ID:</p>
+                        <p>Numero de Documento:</p>
                         <br>
                         <input type="text" id="codArt" name="codArt" class="inputFields" required title="complete este campo">
                         <br>
@@ -134,7 +134,7 @@
 
                 <div class="contenedor2">
                     <div class="hijo">
-                        <p>Cuidad:</p>
+                        <p>Tipo de Documento:</p>
                         <br>
                         <select name="article-select" id="articulo-select" class="inputFields1"></select>
                         <br>
@@ -171,13 +171,106 @@
                     <button class="join-btn " id="button">ENVIAR ALTA</button>
                 </div>
 
-
             </form>
-
 
         </div>
 
     </div>
+
+    <div id="content-modal" class="modal" style="display: none;">
+
+
+        <header class="titulo">
+            <h1>Encabezado modal Formulario de modificacion</h1>
+            <span class="close-btn">
+                <button id="ocultar" class="close">X</button>
+                </span>
+
+        </header>
+
+        <div class="formulario">
+
+            <form id="form" action="" class="form1">
+                <div class="contenedor1">
+                    <div class="hijo">
+                        <p>Numero de Documento:</p>
+                        <br>
+                        <input type="text" id="codArt" name="codArt" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="hijo">
+                        <p>Nombre:</p>
+                        <br>
+                        <input type="text" id="descripcion" name="descripcion" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="hijo">
+                        <p>Apellido:</p>
+                        <br>
+                        <input type="number" id="saldoStock" name="saldoStock" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="contenedor2">
+                    <div class="hijo">
+                        <p>Tipo de Documento:</p>
+                        <br>
+                        <select name="article-select" id="articulo-select" class="inputFields1"></select>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="hijo">
+
+                        <p>Fecha de Nacimiento:</p>
+                        <br>
+                        <input type="date" id="FechaAlta" name="FechaAlta" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="hijo">
+                        <p>Email:</p>
+                        <br>
+                        <input type="number" id="saldoStock" name="saldoStock" class="inputFields" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="hijo">
+                        <p>Archivo:</p>
+                        <br>
+                        <input type="file" id="archivo" name="archivo" required title="complete este campo">
+                        <br>
+                        <br>
+                    </div>
+
+
+
+                </div>
+                <div class="boton">
+                    <button class="join-btn " id="button">ENVIAR MODI</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="ventanaModalRespuesta" style="display: none;">
+        <header class="respuesta">
+            <h1>Respuesta del servidor</h1>
+            <span class="boton-cerrar">
+                <button id="cerrar" class="cerrar">X</button>
+            </span>
+        </header>
+
+        <div id="contenidoModalRespuesta"></div>
 
     </div>
 
@@ -193,6 +286,13 @@
                 $("#contenedor-modal").show();
                 return false;
             });
+
+            $("#cerrar").on('click', function() {
+                $("#ventanaModalRespuesta").hide();
+                return false;
+            });
+
+
         });
     </script>
     <script>
@@ -202,6 +302,7 @@
                 $('#mostrar').attr("disabled", true);
 
             }
+
 
         });
     </script>
@@ -226,20 +327,22 @@
             $("#tbody-articulos").empty();
         }
 
-        function cargarImagenDni(numeroDocumento){
+        function cargarImagenDni(numeroDocumento) {
 
             $.ajax({
                 type: "get",
-                data: {numero_documento : numeroDocumento},
+                data: {
+                    numero_documento: numeroDocumento
+                },
                 url: "cargar_imagen_dni.php",
                 success: function(respuestaDelServer, estado) {
-                    
-                    objetoDato =JSON.parse(respuestaDelServer);
+
+                    objetoDato = JSON.parse(respuestaDelServer);
                     var imagen_frente_data = objetoDato.imagen_frente;
-                    $("#contenedor-modal").css("visibility","visible");
-                    $("#contenedor-modal").css("display","block");
-                    $("#contenedor-modal").empty();
-                    $("#contenedor-modal").html("<iframe width='100%' height='600px'src='data:image/jpeg;base64,"+imagen_frente_data+"'></iframe>");
+                    $("#ventanaModalRespuesta").css("visibility", "visible");
+                    $("#ventanaModalRespuesta").css("display", "block");
+                    $("#contenidoModalRespuesta").empty();
+                    $("#contenidoModalRespuesta").html("<iframe width='100%' height='600px'src='data:image/jpeg;base64," + imagen_frente_data + "'></iframe>");
                 }
             });
 
@@ -287,11 +390,11 @@
 
                         var pdfTd = document.createElement("td");
 
-                        pdfTd.innerHTML = "<button class='btCelda' onclick='cargarImagenDni(" + argValor.numero_documento +")'>Doc.pdf</button>";
+                        pdfTd.innerHTML = "<button id='mostrar' class='btCelda' onclick='cargarImagenDni(" + argValor.numero_documento + ")'>Arch.Imagen</button>";
 
                         var modiTd = document.createElement("td");
 
-                        modiTd.innerHTML = "<button id='mostrar' onclick=mi_funcion() class='btCelda' >Modi</button>";
+                        modiTd.innerHTML = "<button onclick=  class='btCelda' >Modi</button>";
 
                         var borrarTd = document.createElement("td");
 

@@ -174,7 +174,7 @@ footer h3 {
 
 #tbody-articulos {
     display: block;
-    max-height: 629px;
+    max-height: 606px;
     overflow-y: scroll;
 }
 
@@ -385,4 +385,65 @@ p {
     background: rgba(20, 20, 20, .2);
     color: rgb(15, 14, 14);
     outline: none;
+}
+
+
+/* MODAL IMAGEN */
+
+#ventanaModalRespuesta {
+    width: 800px;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 3px;
+    position: fixed;
+    margin-top: 40px;
+}
+
+.boton-cerrar {
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 18px;
+    top: 3px;
+    right: 3px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    opacity: .2;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.cerrar {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.respuesta {
+    width: 100%;
+    height: 60px;
+}
+
+.respuesta h1 {
+    background: #2c3e50;
+    width: 100%;
+    height: 60px;
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
 }
