@@ -3,7 +3,7 @@
 include("conexion_db.php");
 
 
-$fp = fopen('obtener_documentos.txt', 'w');
+
 
 
 $query = " SELECT * FROM tipo_documento ";
@@ -36,6 +36,6 @@ echo json_encode($documentos);
 /* cerrar la conexión */
 $mysqli->close();
 
-fclose($fp);
+
 
 ?>

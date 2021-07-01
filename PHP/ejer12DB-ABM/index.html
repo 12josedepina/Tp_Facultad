@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista</title>
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="./estilo.css">
 </head>
 
 <body>
@@ -47,19 +47,19 @@
 
                     <tr>
                         <th data-campo='id' scope="col">Numero de Documento<br>
-                            <input type="text" class="filtro" id="numero_documento">
+                            <div class="filtro"><input type="text" id="numero_documento"></div>
                         </th>
                         <th data-campo='id' scope="col">Tipo de Documento<br>
-                            <input type="text" class="filtro" id="tipo_Documento">
+                            <div class="filtro"><input type="text" id="numero_documento"></div>
                         </th>
                         <th data-campo='nom' scope="col">Nombre<br>
-                            <input type="text" class="filtro" id="nombre">
+                            <div class="filtro"><input type="text" id="numero_documento"></div>
                         </th>
                         <th data-campo='ape' scope="col">Apellidos<br>
-                            <input type="text" class="filtro" id="apellido">
+                            <div class="filtro"><input type="text" id="numero_documento"></div>
                         </th>
                         <th data-campo='fechaNac' scope="col">Fecha de Nacimiento<br>
-                            <input type="text" class="filtro" id="fechaNac">
+                            <div class="filtro"><input type="text" id="numero_documento"></div>
                         </th>
                         <th data-campo='mail' scope="col">Email</th>
 
@@ -105,7 +105,7 @@
 
         <div class="formulario">
 
-            <form id="form" action="" class="form1">
+            <form id="form" action="" class="form1" enctype="multipart/form-data">
                 <div class="contenedor1">
                     <div class="hijo">
                         <p>Numero de Documento:</p>
@@ -497,6 +497,63 @@
 
         }
         //---------------------------------------------------------------------------------------------------//
+
+        function modificarPersona(numeroDocumento) {
+
+            $.ajax({
+                type: "get",
+                url: "alta_registro_personas.php",
+                processData: false,
+                contentType: false,
+                cache: false,
+                data: {
+                    numero_documento: numeroDocumento
+                },
+                success: function(respuestaServer, estado) {
+
+                    respuesta = JSON.parse(respuestaServer);
+                    $("#contenedor-modal").css("visibility", "visible");
+                    $("#contenedor-modal").css("display", "block");
+
+                    $.ajax({
+
+                        type: "get",
+                        url: "obtener_documentos.php",
+                        success: function(respuestaDocumentosServer, estadoDocumentos) {
+
+                            respuestaDocumentos = JSON.parse(respuestaDocumentosServer);
+
+                            respuestaDocumentos.forEach(function(tipo_documento, index) {
+
+                                var optionElement = document.createElement("option");
+
+                                optionElement.setAttribute("value", tipo_documento.nombre);
+
+                                optionElement.innerHTML = tipo_documento.descripcion;
+
+                                document.getElementById("input-modificar-tipo-documento").appendChild(optionElement);
+
+                            });
+
+                            setSelectedValue(document.getElementById("input-modificar-tipo-documento"), respuesta.tipo_documento_descripcion);
+                        }
+
+                    });
+
+                    $("#input-modificar-nombre").val(respuesta.nombre);
+                    $("#input-modificar-apellido").val(respuesta.apellido);
+                    $("#input-modificar-numero-documento").val(respuesta.numero_documento);
+                    $("#input-modificar-email").val(respuesta.email);
+                    $("#input-modificar-fecha-nacimiento").val(respuesta.fecha_nacimiento);
+
+
+
+
+                }
+            });
+
+
+        }
 
         // FUNCION CREAR  EL TBODY EN EL HTML (DATOS TRAIDOS DEL SERVIDOR)
         function cargaTabla() {

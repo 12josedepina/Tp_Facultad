@@ -4,8 +4,6 @@
 include("conexion_db.php");
 
 
-$fp = fopen('imagen_personas.txt', 'w');
-
 if(!isset($_GET["numero_documento"])){
     fwrite($fp,"Parametro numero documento requerido");
     fclose($fp);
@@ -35,4 +33,3 @@ echo json_encode($imagen);
 /* cerrar la conexión */
 $mysqli->close();
 
-fclose($fp);

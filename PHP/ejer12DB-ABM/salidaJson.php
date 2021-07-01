@@ -4,9 +4,10 @@
 include("conexion_db.php");
 
 
-$fp = fopen('personas_log.txt', 'w');
+
 
 $query = "SELECT p.*,t.nombre as tipo_documento_nombre,t.descripcion as tipo_documento_descripcion FROM personas p INNER JOIN tipo_documento t ON t.id = p.id_tipo_documento ";
+
 
 $personasObj = [];
 
@@ -40,5 +41,5 @@ echo json_encode($personasObj);
 /* cerrar la conexión */
 $mysqli->close();
 
-fclose($fp);
+
 ?>

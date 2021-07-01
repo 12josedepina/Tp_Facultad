@@ -3,7 +3,7 @@
 include("conexion_db.php");
 
 
-$fp = fopen('obtener_persona.txt', 'w');
+
 
 if(!isset($_GET["numero_documento"])){
     fwrite($fp,"Parametro numero documento requerido");
@@ -44,6 +44,6 @@ echo json_encode($persona);
 /* cerrar la conexión */
 $mysqli->close();
 
-fclose($fp);
+
 
 ?>

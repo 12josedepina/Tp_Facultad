@@ -20,7 +20,8 @@ body {
 
 .cabezera {
     width: 100%;
-    background: #30475E;
+    /*background: #30475E;*/
+    background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
     height: 12vh;
     /* Flexbox */
     display: flex;
@@ -65,6 +66,7 @@ body {
     border: 2px solid #1a1b1a;
     cursor: pointer;
     font-size: 18px;
+    border-radius: 5px;
 }
 
 .btn:hover {
@@ -113,8 +115,8 @@ tbody {
 }
 
 thead th {
-    height: 55px;
-    font-size: 12px;
+    height: 50px;
+    font-size: 13px;
     font-weight: bold;
     color: rgb(255, 255, 255);
 }
@@ -155,7 +157,7 @@ tfoot th {
 }
 
 footer {
-    background: #30475E;
+    background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
     width: 100%;
     height: 10vh;
     /* Flexbox */
@@ -391,8 +393,8 @@ p {
 /* MODAL IMAGEN */
 
 #ventanaModalRespuesta {
-    width: 800px;
-    height: 550px;
+    width: 850px;
+    height: 650px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -405,6 +407,7 @@ p {
     border-radius: 3px;
     position: fixed;
     margin-top: 40px;
+    background: aquamarine;
 }
 
 .boton-cerrar {
@@ -446,6 +449,14 @@ p {
     align-items: center;
     color: #fff;
     overflow: hidden;
+}
+
+#contenidoModalRespuesta iframe {
+    height: 454px;
+    position: fixed;
+    top: 16%;
+    width: 95%;
+    left: 3%;
 }
 
 

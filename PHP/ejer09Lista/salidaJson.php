@@ -12,9 +12,9 @@ $fp = fopen('logs_articulos.txt', 'w');
 $mysqli = new mysqli(HOST,USER , PASSWORD, DB_NAME);
 
 
-if ($mysqli->connect_errno) {
+if ($mysqli->connect_error) {
     
-    fwrite($fp, "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error);
+    fwrite($fp, "Fallo al conectar a MySQL: (" . $mysqli->connect_error . ") " . $mysqli->connect_error);
 
 }else{
     
