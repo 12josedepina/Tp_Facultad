@@ -19,7 +19,8 @@ if (!$mysqli->query($query)) {
     die();
 }
 
-echo "Se elimino la persona con el numero de documento : ".$numero_documento;
+echo "Se elimino la persona con el numero de documento : ".$numero_documento;echo "</br>";echo "</br>";
+echo "Baja realizado correctamente !";
 /* cerrar la conexión */
 
 $mysqli->close();

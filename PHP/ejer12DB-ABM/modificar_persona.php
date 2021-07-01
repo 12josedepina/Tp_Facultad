@@ -43,10 +43,17 @@ if (!$mysqli->query($query)) {
     echo "ERROR AL INTENTAR ACTUALIZAR LOS DATOS DE LA PERSONA".$mysqli->error;
     die();
 }
+echo "Datos recibidos para la modificacion:"; echo "</br>";
+echo "Se actualizo correctamente los datos";echo "</br>";
+echo "Numero de documento : ".$numero_documento;echo "</br>";
+echo "Tipo de documento : ".$id_tipo_documento;echo "</br>";
+echo "Nombre : ".$nombre;echo "</br>";
+echo "Apellido : ".$apellido;echo "</br>";
+echo "Fecha de Nacimiento : ".$fecha_nacimiento;echo "</br>";
+echo "Email : ".$email;echo "</br>";
+echo "Datos simples actualizados correctamente!"; echo "</br>";
+echo "Trae archivo-Imagen asociado a numero de documento: ".$numero_documento; echo "</br>";
 
-echo "Se actualizo correctamente los datos";
-echo "nombre : ".$nombre;
-echo "documento : ".$numero_documento;
 
 /* cerrar la conexión */
 $mysqli->close();
