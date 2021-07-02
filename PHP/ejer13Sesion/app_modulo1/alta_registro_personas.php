@@ -1,9 +1,10 @@
 <?php
 
+
 include("conexion_db.php");
 
 
-$fp = fopen('actualizar_personas.txt', 'w');
+$fp = fopen('alta_persona.txt', 'w');
 
 $imagen_file = addslashes(file_get_contents($_FILES["imagen"]["tmp_name"]));
 $nombre = $_POST["nombre"];
@@ -26,25 +27,20 @@ if ($resultado = $mysqli->query($queryIdTipoDocumento)) {
 
 }
 
-$query = " UPDATE personas set "; 
-$query.= " imagen_frente='{$imagen_file}'";
-$query.= " ,nombre='".$nombre."' ";
-$query.= ",apellido='".$apellido."' ";
-$query.= ",fecha_de_nac='".$fecha_nacimiento."' ";
-$query.= ",email='".$email."' ";
-$query.= ",id_tipo_documento=".$id_tipo_documento;
-$query.= " where numero_documento = ".$numero_documento;
+
+$query = " INSERT INTO personas(numero_documento,nombre,apellido,fecha_de_nac,email,id_tipo_documento,imagen_frente)  "; 
+$query.= " VALUES ('{$numero_documento}','{$nombre}','$apellido','{$fecha_nacimiento}','{$email}','{$id_tipo_documento}','{$imagen_file}')";
 
 
 $persona  = new stdClass;
 
 if (!$mysqli->query($query)) {
 
-    echo "ERROR AL INTENTAR ACTUALIZAR LOS DATOS DE LA PERSONA".$mysqli->error;
+    echo "ERROR AL INTENTAR DAR DE ALTA LA PERSONA".$mysqli->error;
     die();
 }
-echo "Datos recibidos para la modificacion:"; echo "</br>";
-echo "Se actualizo correctamente los datos";echo "</br>";
+echo "Datos recibidos para la Creación:"; echo "</br>";
+echo "Se creo la persona correctamente";echo "</br>";
 echo "Numero de documento : ".$numero_documento;echo "</br>";
 echo "Tipo de documento : ".$id_tipo_documento;echo "</br>";
 echo "Nombre : ".$nombre;echo "</br>";

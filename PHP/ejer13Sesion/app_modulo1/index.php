@@ -1,3 +1,7 @@
+<?php
+include("../valida_sesion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +38,7 @@
                 </div>
 
                 <div>
-                    <button id="alta" class="btn">Cerrar Sesion</button>
+                    <a href="../destruir_sesion.php" class="btn">Cerrar Sesion</a>
                 </div>
 
             </div>
@@ -298,7 +302,7 @@
 
     </div>
 
-    <script src="../jquery.js"></script>
+    <script src="../../jquery.js"></script>
     <script>
         $(document).ready(function() {
 
