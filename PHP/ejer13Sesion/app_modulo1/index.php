@@ -23,7 +23,7 @@ include("../valida_sesion.php");
             <div class="botones">
                 <div class="entrada">
                     <p>Orden</p>
-                    <input type="text" class="im" value="SaldoStock" readonly>
+                    <input type="text" id="columnToOrder" class="im" value="Numero de Documento" readonly>
                 </div>
 
                 <div>
@@ -38,7 +38,8 @@ include("../valida_sesion.php");
                 </div>
 
                 <div>
-                    <a href="../destruir_sesion.php" class="btn">Cerrar Sesion</a>
+                    
+                    <a href="../destruir_sesion.php"><input type="button" value="Cerrar Sesion" class="btn"></a>
                 </div>
 
             </div>
@@ -50,22 +51,22 @@ include("../valida_sesion.php");
                 <thead>
 
                     <tr>
-                        <th data-campo='id' scope="col">Numero de Documento<br>
+                        <th data-campo='id' id="colum-numero-documento"scope="col">Numero de Documento<br>
                             <div class="filtro"><input id="filtro-numero-documento" type="text" ></div>
                         </th>
-                        <th data-campo='id' scope="col">Tipo de Documento<br>
+                        <th data-campo='id' id="colum-tipo-documento" scope="col">Tipo de Documento<br>
                             <div class="filtro"><input id="filtro-tipo-documento"  type="text" ></div>
                         </th>
-                        <th data-campo='nom' scope="col">Nombre<br>
+                        <th data-campo='nom' id="colum-nombre" scope="col">Nombre<br>
                             <div class="filtro"><input id="filtro-nombre"  type="text" ></div>
                         </th>
-                        <th data-campo='ape' scope="col">Apellidos<br>
+                        <th data-campo='ape' id="colum-apellido" scope="col">Apellidos<br>
                             <div class="filtro"><input id="filtro-apellido"  type="text" ></div>
                         </th>
-                        <th data-campo='fechaNac' scope="col">Fecha de Nacimiento<br>
+                        <th data-campo='fechaNac' id="colum-fecha-nacimiento" scope="col">Fecha de Nacimiento<br>
                             <div class="filtro"><input id="filtro-fecha-nacimiento"  type="text" ></div>
                         </th>
-                        <th data-campo='mail' scope="col">Email</th>
+                        <th data-campo='mail' scope="col" id="colum-email">Email</th>
 
                         <th data-campo='Pdf'>Imagen</th>
                         <th data-campo='modi'>MODIS</th>
@@ -301,6 +302,8 @@ include("../valida_sesion.php");
         <div id="contenidoModalRespuesta"></div>
 
     </div>
+
+    <script src="./ordena.js"></script>
 
     <script src="../../jquery.js"></script>
     <script>
@@ -562,7 +565,7 @@ include("../valida_sesion.php");
                 type: "get",
                 data : jsonFiltro,
                 url: "salidaJson.php",
-
+            
                 success: function(respuestaDelServer, estado) {
                     $("#tbody-articulos").empty();
                     objJson = JSON.parse(respuestaDelServer);

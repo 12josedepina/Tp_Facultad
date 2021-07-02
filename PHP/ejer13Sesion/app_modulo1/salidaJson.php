@@ -12,6 +12,9 @@ if(isset($_GET["campo"]) &&  isset($_GET["palabra"])){
 }
 
 
+
+
+
 $query = "SELECT p.*,t.nombre as tipo_documento_nombre,t.descripcion as tipo_documento_descripcion FROM personas p ";
 $query.= " INNER JOIN tipo_documento t ON t.id = p.id_tipo_documento ";
 $query.= $query2;

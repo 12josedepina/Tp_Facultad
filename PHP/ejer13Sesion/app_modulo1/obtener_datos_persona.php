@@ -16,6 +16,8 @@ $numero_documento = $_GET["numero_documento"];
 $query = "SELECT p.*,t.nombre as tipo_documento_nombre,t.descripcion as tipo_documento_descripcion FROM personas p ";
 $query.= " INNER JOIN tipo_documento t ON t.id = p.id_tipo_documento where numero_documento = ".$numero_documento ;
 
+
+
 $persona  = new stdClass;
 
 if ($resultado = $mysqli->query($query)) {
