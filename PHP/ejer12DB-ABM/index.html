@@ -23,18 +23,18 @@
                 </div>
 
                 <div>
-                    <button id="cargar-articulos" onclick="cargaTabla()" class="btn">Cargar Datos</button>
+                    <button id="cargar-articulos" class="btn">Cargar Datos</button>
                 </div>
                 <div>
                     <button id="limpiar-articulos" class="btn">Vaciar Datos</button>
                 </div>
 
                 <div>
-                    <button id="mostrar" onclick=mi_funcion() class="btn">Alta Registro</button>
+                    <button id="crear-persona" class="btn">Alta Registro</button>
                 </div>
 
                 <div>
-                    <button id="alta" id="mostrar" class="btn">Cerrar Sesion</button>
+                    <button id="alta" class="btn">Cerrar Sesion</button>
                 </div>
 
             </div>
@@ -47,19 +47,19 @@
 
                     <tr>
                         <th data-campo='id' scope="col">Numero de Documento<br>
-                            <div class="filtro"><input type="text" id="numero_documento"></div>
+                            <div class="filtro"><input type="text" ></div>
                         </th>
                         <th data-campo='id' scope="col">Tipo de Documento<br>
-                            <div class="filtro"><input type="text" id="numero_documento"></div>
+                            <div class="filtro"><input type="text" ></div>
                         </th>
                         <th data-campo='nom' scope="col">Nombre<br>
-                            <div class="filtro"><input type="text" id="numero_documento"></div>
+                            <div class="filtro"><input type="text" ></div>
                         </th>
                         <th data-campo='ape' scope="col">Apellidos<br>
-                            <div class="filtro"><input type="text" id="numero_documento"></div>
+                            <div class="filtro"><input type="text" ></div>
                         </th>
                         <th data-campo='fechaNac' scope="col">Fecha de Nacimiento<br>
-                            <div class="filtro"><input type="text" id="numero_documento"></div>
+                            <div class="filtro"><input type="text" ></div>
                         </th>
                         <th data-campo='mail' scope="col">Email</th>
 
@@ -92,7 +92,7 @@
     </div>
 
 
-    <div id="contenedor-modal" class="modal cerrar-modal" style="display: none;">
+    <div id="modal-alta-persona" class="modal cerrar-modal" style="display: none;">
 
 
         <header class="titulo">
@@ -105,19 +105,19 @@
 
         <div class="formulario">
 
-            <form id="form" action="" class="form1" enctype="multipart/form-data">
+            <form id="form-alta-persona" action="" class="form1" >
                 <div class="contenedor1">
                     <div class="hijo">
                         <p>Numero de Documento:</p>
                         <br>
-                        <input type="text" id="codArt" name="codArt" class="inputFields" required title="complete este campo">
+                        <input type="text" id="alta-persona-numero-documento" name="numero_documento" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
                     <div class="hijo">
                         <p>Nombre:</p>
                         <br>
-                        <input type="text" id="descripcion" name="descripcion" class="inputFields" required title="complete este campo">
+                        <input type="text" id="alta-persona-nombre" name="nombre" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
@@ -125,7 +125,7 @@
                     <div class="hijo">
                         <p>Apellido:</p>
                         <br>
-                        <input type="number" id="saldoStock" name="saldoStock" class="inputFields" required title="complete este campo">
+                        <input type="text"  id="alta-persona-apellido" name="apellido" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
@@ -136,7 +136,7 @@
                     <div class="hijo">
                         <p>Tipo de Documento:</p>
                         <br>
-                        <select name="article-select" id="articulo-select" class="inputFields1"></select>
+                        <select id="alta-persona-tipo-documento" name="tipo_documento" class="inputFields1"></select>
                         <br>
                         <br>
                     </div>
@@ -145,28 +145,28 @@
 
                         <p>Fecha de Nacimiento:</p>
                         <br>
-                        <input type="date" id="FechaAlta" name="FechaAlta" class="inputFields" required title="complete este campo">
+                        <input type="date" id="alta-persona-fecha-nacimiento" name="fecha_nacimiento" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
                     <div class="hijo">
                         <p>Email:</p>
                         <br>
-                        <input type="number" id="saldoStock" name="saldoStock" class="inputFields" required title="complete este campo">
+                        <input type="email" id="alta-persona-email" name="email" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
                     <div class="hijo">
                         <p>Archivo:</p>
                         <br>
-                        <input type="file" id="archivo" name="archivo" required title="complete este campo">
+                        <input type="file" id="alta-persona-image" name="imagen" required title="complete este campo">
                         <br>
                         <br>
                     </div>
 
                 </div>
                 <div class="boton">
-                    <button class="join-btn " id="button">ENVIAR ALTA</button>
+                    <input type="submit" class="join-btn " id="button" VALUE="ENVIAR ALTA" />
                 </div>
 
             </form>
@@ -188,19 +188,19 @@
 
         <div class="formulario">
 
-            <form id="form" action="" class="form1">
+            <form id="form-modificar-persona" action="" class="form1">
                 <div class="contenedor1">
                     <div class="hijo">
                         <p>Numero de Documento:</p>
                         <br>
-                        <input type="text" id="input-modificar-numero-documento" name="codArt" class="inputFields" required title="complete este campo">
+                        <input type="text" id="input-modificar-numero-documento" name="numero_documento" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
                     <div class="hijo">
                         <p>Nombre:</p>
                         <br>
-                        <input type="text" id="input-modificar-nombre" name="descripcion" class="inputFields" required title="complete este campo">
+                        <input type="text" id="input-modificar-nombre" name="nombre" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
@@ -208,7 +208,7 @@
                     <div class="hijo">
                         <p>Apellido:</p>
                         <br>
-                        <input type="text" id="input-modificar-apellido" class="inputFields" required title="complete este campo">
+                        <input type="text" id="input-modificar-apellido" name="apellido" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
@@ -219,7 +219,7 @@
                     <div class="hijo">
                         <p>Tipo de Documento:</p>
                         <br>
-                        <select name="article-select" id="input-modificar-tipo-documento" class="inputFields1"></select>
+                        <select id="select-modificar-tipo-documento" name="tipo_documento" class="inputFields1"></select>
                         <br>
                         <br>
                     </div>
@@ -228,21 +228,21 @@
 
                         <p>Fecha de Nacimiento:</p>
                         <br>
-                        <input type="date" id="input-modificar-fecha-nacimiento" name="FechaAlta" class="inputFields" required title="complete este campo">
+                        <input type="date" id="input-modificar-fecha-nacimiento" name="fecha_nacimiento" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
                     <div class="hijo">
                         <p>Email:</p>
                         <br>
-                        <input type="email" id="input-modificar-email" name="saldoStock" class="inputFields" required title="complete este campo">
+                        <input type="email" name="email" id="input-modificar-email" class="inputFields" required title="complete este campo">
                         <br>
                         <br>
                     </div>
                     <div class="hijo">
                         <p>Archivo:</p>
                         <br>
-                        <input type="file" id="input-modificar-archivo" name="archivo" required title="complete este campo">
+                        <input type="file" name="imagen" required title="complete este campo">
                         <br>
                         <br>
                     </div>
@@ -251,25 +251,26 @@
 
 
                 <div class="boton">
-                    <button class="join-btn " onclick="modificarDatosPersona()">MODIFICAR</button>
+                    <input type="submit" class="join-btn " value="MODIFICAR" />
                 </div>
 
             </form>
 
-            <div id="ventanaModalRespuestaModificar" class="cerrar-modal" style="display: none;">
-                <header class="principal">
-                    <h1>Respuesta del servidor</h1>
-                    <span class="boton-Cierra">
-                        <button id="cerrar"  onclick="cerrarModal()" class="cierra">X</button>
-                    </span>
-                </header>
-
-                <div id="respuesta-modificar-persona"></div>
-
-            </div>
 
         </div>
 
+    </div>
+
+    
+    <div id="ventanaModalRespuestaModificar" class="cerrar-modal" style="display: none;">
+        <header class="principal">
+            <h1>Respuesta del servidor</h1>
+            <span class="boton-Cierra">
+                <button id="cerrar"  onclick="cerrarModal()" class="cierra">X</button>
+            </span>
+        </header>
+
+        <div id="respuesta-modificar-persona"></div>
 
     </div>
 
@@ -301,34 +302,20 @@
     <script>
         $(document).ready(function() {
 
-            $("#mostrar").on('click', function() {
-                $("#contenedor-modal").show();
+            $("#crear-persona").on('click', function() {
+                $("#modal-alta-persona").show();
+                crearPersona();
                 return false;
             });
-
-
+            
 
         });
 
         function cerrarModal() {
             $(".cerrar-modal").hide();
         }
-    </script>
-    <script>
-        $(document).ready(function() {
 
-            function mi_funcion() {
-                $('#mostrar').attr("disabled", true);
-
-            }
-
-
-        });
-    </script>
-
-
-
-    <script>
+          
         $(document).ready(function() {
             $("#cargar-articulos").click(function() {
                 cargaTabla();
@@ -339,9 +326,59 @@
             });
 
         });
-    </script>
+   
+        $("#form-modificar-persona").submit(function () {
+            var formData = new FormData(this);
+            $.ajax({
+                url: 'modificar_persona.php',
+                type: 'POST',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (respuesta,estado) {
+                    
+                    $("#ventanaModalRespuestaModificar").show();
+                    
+                    $("#respuesta-modificar-persona").html(respuesta);
 
-    <script>
+                },
+                error: function(){
+                    alert("error in ajax form submission");
+                }
+            });
+            return false;
+        });
+
+        $("#form-alta-persona").submit(function () {
+            var formData = new FormData(this);
+            $.ajax({
+                url: 'alta_registro_personas.php',
+                type: 'POST',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (respuesta,estado) {
+
+                    $("#ventanaModalRespuestaModificar").show();
+                    
+                    $("#respuesta-modificar-persona").html(respuesta);
+
+                    cargaTabla();
+                },
+                error: function(){
+                    console.log("error in ajax form submission");
+
+                    
+                }
+            });
+            return false;
+        });
+
+
         function clearTable() {
             $("#tbody-articulos").empty();
         }
@@ -376,53 +413,9 @@
             }
         }
 
-        //---------------------------------------------------------------------------------------------------//
-
-        //DATOS TRAIDO DE LA MODIFICACION DEL MODI  PARA SER ALMACENADOS EN UNA RESPUESTA
-
-        function modificarDatosPersona() {
-
-
-            var imagen = $("#input-modificar-archivo").val();
-            var nombre = $("#input-modificar-nombre").val();
-            var apellido = $("#input-modificar-apellido").val();
-            var numero_documento = $("#input-modificar-numero-documento").val();
-            var tipo_documento = $("#input-modificar-tipo-documento").val();
-            var email = $("#input-modificar-email").val();
-            var fecha_nacimiento = $("#input-modificar-fecha-nacimiento").val();
-
-
-            $.ajax({
-                type: "post",
-                url: "modificar_persona.php",
-                data: {
-                    //image_file: imagen,
-                    nombre: nombre,
-                    apellido: apellido,
-                    numero_documento: numero_documento,
-                    tipo_documento: tipo_documento,
-                    email: email,
-                    fecha_nacimiento: fecha_nacimiento
-                },
-                success: function(respuestaServer, estado) {
-                    $("#respuesta-modificar-persona").html(respuestaServer);
-                    $("#ventanaModalRespuestaModificar").css("visibility", "visible");
-                    $("#ventanaModalRespuestaModificar").css("display", "block");
-                    cargaTabla();
-                }
-            });
-        }
-        //---------------------------------------------------------------------------------------------------//
-
         //BORRAR DATOS DE UNA FILA DE PERSONAS
 
         function borrarPersona(numeroDocumento) {
-
-            if (confirm("Desea borrar los datos?")) {
-                alert("Datos guardados exitosamente");
-            } else {
-                alert("Usted cancelo la acción para guardar");
-            }
 
             $.ajax({
                 type: "post",
@@ -440,9 +433,47 @@
             });
 
         }
+
+        function traerDocumentos(select ,documentoSeleccionado){
+            $.ajax({
+
+                type: "get",
+                url: "obtener_documentos.php",
+                success: function(respuestaDocumentosServer, estadoDocumentos) {
+
+                    respuestaDocumentos = JSON.parse(respuestaDocumentosServer);
+
+                    for (var i=0; i<select.length; i++) {
+                        select.remove(i);
+                    }
+
+                    respuestaDocumentos.forEach(function(tipo_documento, index) {
+
+                        var optionElement = document.createElement("option");
+
+                        optionElement.setAttribute("value", tipo_documento.nombre);
+
+                        optionElement.innerHTML = tipo_documento.descripcion;
+
+                        select.appendChild(optionElement);
+
+                    });
+                    if(documentoSeleccionado !== ''){
+
+                        setSelectedValue(select, respuesta.tipo_documento_descripcion);
+                    }
+                }
+
+            });
+        }
         //---------------------------------------------------------------------------------------------------//
 
-        //MODIFICAR PERSONA PARA RELLENAR EN LOS IMPUTS Y MANDARLO A RESPUESTA SERVIDOR
+
+        function crearPersona(){
+            traerDocumentos(document.getElementById("alta-persona-tipo-documento"),'');
+        }
+
+        //TRAER DATOS DE PERSONA PARA RELLENAR EN LOS INPUTS DEL FORMULARIO CORRESPONDIENTE
         function modificarPersona(numeroDocumento) {
 
             $.ajax({
@@ -454,106 +485,24 @@
                 success: function(respuestaServer, estado) {
 
                     respuesta = JSON.parse(respuestaServer);
+
+                    traerDocumentos(document.getElementById("select-modificar-tipo-documento"),respuesta.tipo_documento_descripcion);
+
+                    $("#input-modificar-nombre").val(respuesta.nombre);
+                    $("#input-modificar-apellido").val(respuesta.apellido);
+                    $("#input-modificar-numero-documento").val(respuesta.numero_documento);
+                    $("#input-modificar-email").val(respuesta.email);
+                    $("#input-modificar-fecha-nacimiento").val(respuesta.fecha_nacimiento);
+
                     $("#modal-modificar-persona").css("visibility", "visible");
                     $("#modal-modificar-persona").css("display", "block");
 
-                    $.ajax({
-
-                        type: "get",
-                        url: "obtener_documentos.php",
-                        success: function(respuestaDocumentosServer, estadoDocumentos) {
-
-                            respuestaDocumentos = JSON.parse(respuestaDocumentosServer);
-
-                            respuestaDocumentos.forEach(function(tipo_documento, index) {
-
-                                var optionElement = document.createElement("option");
-
-                                optionElement.setAttribute("value", tipo_documento.nombre);
-
-                                optionElement.innerHTML = tipo_documento.descripcion;
-
-                                document.getElementById("input-modificar-tipo-documento").appendChild(optionElement);
-
-                            });
-
-                            setSelectedValue(document.getElementById("input-modificar-tipo-documento"), respuesta.tipo_documento_descripcion);
-                        }
-
-                    });
-
-                    $("#input-modificar-nombre").val(respuesta.nombre);
-                    $("#input-modificar-apellido").val(respuesta.apellido);
-                    $("#input-modificar-numero-documento").val(respuesta.numero_documento);
-                    $("#input-modificar-email").val(respuesta.email);
-                    $("#input-modificar-fecha-nacimiento").val(respuesta.fecha_nacimiento);
-
-
-
-
                 }
             });
 
 
         }
-        //---------------------------------------------------------------------------------------------------//
-
-        function modificarPersona(numeroDocumento) {
-
-            $.ajax({
-                type: "get",
-                url: "alta_registro_personas.php",
-                processData: false,
-                contentType: false,
-                cache: false,
-                data: {
-                    numero_documento: numeroDocumento
-                },
-                success: function(respuestaServer, estado) {
-
-                    respuesta = JSON.parse(respuestaServer);
-                    $("#contenedor-modal").css("visibility", "visible");
-                    $("#contenedor-modal").css("display", "block");
-
-                    $.ajax({
-
-                        type: "get",
-                        url: "obtener_documentos.php",
-                        success: function(respuestaDocumentosServer, estadoDocumentos) {
-
-                            respuestaDocumentos = JSON.parse(respuestaDocumentosServer);
-
-                            respuestaDocumentos.forEach(function(tipo_documento, index) {
-
-                                var optionElement = document.createElement("option");
-
-                                optionElement.setAttribute("value", tipo_documento.nombre);
-
-                                optionElement.innerHTML = tipo_documento.descripcion;
-
-                                document.getElementById("input-modificar-tipo-documento").appendChild(optionElement);
-
-                            });
-
-                            setSelectedValue(document.getElementById("input-modificar-tipo-documento"), respuesta.tipo_documento_descripcion);
-                        }
-
-                    });
-
-                    $("#input-modificar-nombre").val(respuesta.nombre);
-                    $("#input-modificar-apellido").val(respuesta.apellido);
-                    $("#input-modificar-numero-documento").val(respuesta.numero_documento);
-                    $("#input-modificar-email").val(respuesta.email);
-                    $("#input-modificar-fecha-nacimiento").val(respuesta.fecha_nacimiento);
-
-
-
-
-                }
-            });
-
-
-        }
+        
 
         // FUNCION CREAR  EL TBODY EN EL HTML (DATOS TRAIDOS DEL SERVIDOR)
         function cargaTabla() {
@@ -598,7 +547,7 @@
 
                         var pdfTd = document.createElement("td");
 
-                        pdfTd.innerHTML = "<button id='mostrar' class='btCelda' onclick='cargarImagenDni(" + argValor.numero_documento + ")'>Arch.Imagen</button>";
+                        pdfTd.innerHTML = "<button class='btCelda' onclick='cargarImagenDni(" + argValor.numero_documento + ")'>Arch.Imagen</button>";
 
                         var modiTd = document.createElement("td");
 
