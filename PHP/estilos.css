@@ -1,0 +1,134 @@
+body {
+    background: cadetblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    line-height: 32px;
+    padding-top: 70px;
+}
+
+h1 a {
+    color: #66CCCC;
+}
+
+.tabla {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    position: absolute;
+    top: 5%;
+    left: 40%;
+}
+
+.tabla .featured-table {
+    box-shadow: 0px 0px 19px -3px rgba(0, 0, 0, 0.36);
+}
+
+.tabla .pricing-table {
+    display: inline-block;
+    border: 1px solid #C8C8C8;
+    border-radius: 10px;
+    background: white;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabla .pricing-table__header {
+    padding: 20px;
+    font-size: 20px;
+    color: #909090;
+    background: #E0E0E0;
+}
+
+.tabla .pricing-table__price {
+    color: #66CCCC;
+    padding: 20px;
+    margin: auto;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.tabla .pricing-table__button {
+    display: block;
+    background: #66CCCC;
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabla .pricing-table__button:before {
+    position: absolute;
+    left: -20%;
+    top: -10%;
+    content: '';
+    width: 60%;
+    height: 220%;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    background: white;
+    opacity: .3;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabla .pricing-table__button:after {
+    position: absolute;
+    content: '>';
+    top: 0;
+    right: 0;
+    font-size: 25px;
+    padding: 15px;
+    padding-right: 40px;
+    color: white;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabla .pricing-table__button:hover {
+    background: black;
+}
+
+.tabla .pricing-table__list {
+    padding: 20px;
+    color: #A0A0A0;
+}
+
+.tabla .pricing-table__list li {
+    border-bottom: 1px solid #C8C8C8;
+}
+
+.tabla .pricing-table__list li:last-child {
+    border: none;
+}
+
+.tabla .pricing-table:hover {
+    box-shadow: 0px 0px 19px -3px rgba(0, 0, 0, 0.36);
+}
+
+#menu ul a {
+    display: block;
+    color: rgb(20, 20, 20);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 9px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 40px;
+}
+
+#menu a:hover {
+    background: #d0dafd;
+    color: #339;
+}

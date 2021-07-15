@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+/*--------------------HEADER-----------------*/
+
+header {
+    background: url('./img/blur-close-up-code-computer-546819-1080x675.jpg') #2744c2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+}
+
+header .contenedor-texto {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 77px 0;
+}
+
+header .contenedor-texto .texto {
+    border: 2px solid rgba(255, 2555, 255, 0.5);
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    padding: 25px 65px;
+}
+
+header .contenedor-texto .texto h1,
+h2,
+h3 {
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0;
+}
+
+header .contenedor-texto .texto .nombre {
+    margin-bottom: 10px;
+    font-size: 45px;
+    line-height: 50px;
+}
+
+header .contenedor-texto .texto .profesion {
+    margin-bottom: 10px;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+header .contenedor-texto .texto .legajo {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+header .menu {
+    margin: 40px 0;
+    text-align: right;
+}
+
+header .menu a {
+    margin: 0 20px;
+    color: #ffffff;
+    padding-bottom: 9px;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1em;
+}
+
+header .menu a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.main .trabajos {
+    background: #e9e7e7;
+    padding: 50px 0;
+}
+
+.main .trabajos .contenedor {
+    overflow: hidden;
+}
+
+.main .trabajos .titulo {
+    font-size: 34px;
+    line-height: 34px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #3f36c5;
+    text-align: center;
+}
+
+.main .trabajos .contenedor .contenedor-trabajos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main .trabajos .contenedor .contenedor-trabajos .trabajo {
+    width: 23%;
+    margin-bottom: 40px;
+}
+
+.main .trabajos .contenedor .contenedor-trabajos .trabajo .thumb {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.main .trabajos .contenedor .contenedor-trabajos .trabajo .thumb img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.main .trabajos .contenedor-trabajos .trabajo .descripcion {
+    text-align: center;
+}
+
+.main .trabajos .contenedor-trabajos .trabajo .descripcion .nombre {
+    font-weight: 700;
+    color: #3895ea;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}

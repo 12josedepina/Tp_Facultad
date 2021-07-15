@@ -1,11 +1,14 @@
 <?php 
+//INCLUYE LA VALIDACION PARA ENTRAR A LA APP
 include("../valida_sesion.php");
 
+// DATOS DE CLEVER CLOUD
 define("USER","uweixrhkpumlwxik");
 define("PASSWORD","mpZ3cUp30vUFrvGMcSfs");
 define("HOST","bwmfm2ptyu7kv8krlfru-mysql.services.clever-cloud.com");
 define("DB_NAME","bwmfm2ptyu7kv8krlfru");
 
+//CREANDO LOG DE ERROR  
 $log_file_conexion = fopen('log_conexion.txt', 'w');
 
 $mysqli = new mysqli(HOST,USER , PASSWORD, DB_NAME);

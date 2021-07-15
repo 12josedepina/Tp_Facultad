@@ -1,11 +1,12 @@
 <?php
 
-
+// INCLUYENDO LA CONEXION A LA BASE DE DATOS 
 include("conexion_db.php");
 
-
+// CREANDO UN TEXTO PARA LOS ERRORES DE LA CREACION DE PERSONA
 $fp = fopen('alta_persona.txt', 'w');
 
+//VARIABLES  QUE VAMOS A MANDAR PARA CREAR UN REGISTRO CON LOS CAMPOS CORRESPONDIENTES
 $imagen_file = addslashes(file_get_contents($_FILES["imagen"]["tmp_name"]));
 $nombre = $_POST["nombre"];
 $apellido   = $_POST["apellido"];
@@ -14,7 +15,7 @@ $tipo_documento = $_POST["tipo_documento"];
 $email = $_POST["email"];
 $fecha_nacimiento = $_POST["fecha_nacimiento"];
 
-
+//CONSULTA SQL  SELECCIONAMOS ID  DE TIPO DOCUMENTO  MIENTRA QUE NOMBRE  RECIBA EL PARAMETRO DE LA VARIABLE
 $queryIdTipoDocumento = " SELECT id FROM tipo_documento where nombre = ".$tipo_documento;
 
 $id_tipo_documento = 1;//seteado por default DNI
@@ -27,18 +28,19 @@ if ($resultado = $mysqli->query($queryIdTipoDocumento)) {
 
 }
 
-
+// CONSULTA SQL  
 $query = " INSERT INTO personas(numero_documento,nombre,apellido,fecha_de_nac,email,id_tipo_documento,imagen_frente)  "; 
 $query.= " VALUES ('{$numero_documento}','{$nombre}','$apellido','{$fecha_nacimiento}','{$email}','{$id_tipo_documento}','{$imagen_file}')";
 
 
-$persona  = new stdClass;
 
 if (!$mysqli->query($query)) {
 
     echo "ERROR AL INTENTAR DAR DE ALTA LA PERSONA".$mysqli->error;
     die();
 }
+
+// DATOS A MOSTRAR EN EL MODAL DE RESPUESTA  DE CREAR PERSONA
 echo "Datos recibidos para la Creación:"; echo "</br>";
 echo "Se creo la persona correctamente";echo "</br>";
 echo "Numero de documento : ".$numero_documento;echo "</br>";

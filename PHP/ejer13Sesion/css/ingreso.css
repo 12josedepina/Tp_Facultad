@@ -64,3 +64,9 @@ body {
     background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
     border-radius: 15px;
 }
+
+@media screen and (max-width: 540px) {
+    #login-box {
+        flex-direction: column;
+    }
+}

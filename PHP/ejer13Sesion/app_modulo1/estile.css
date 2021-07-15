@@ -31,12 +31,12 @@ body {
     flex-wrap: nowrap;
 }
 
-.cabezera h3 {
+.cabezera h1 {
     font-weight: normal;
     font-variant: small-caps;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .entrada p {
@@ -153,12 +153,12 @@ footer {
     align-items: center;
 }
 
-footer h3 {
+footer h1 {
     font-weight: normal;
     font-variant: small-caps;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 #tbody-articulos {
@@ -544,4 +544,322 @@ p {
     font-weight: bold;
     font-family: monospace;
     color: #2c3e50;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media all and (max-width:1680px) {
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+    }
+    #tbody-articulos {
+        display: block;
+        max-height: 460px;
+        overflow-y: scroll;
+    }
+}
+
+@media all and (max-width:1200px) {
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+    }
+    #tbody-articulos {
+        display: block;
+        max-height: 460px;
+        overflow-y: scroll;
+    }
+    .filtro {
+        position: absolute;
+        top: 17%;
+        width: 10%;
+        margin: 9px;
+    }
+}
+
+@media all and (max-width:1000px) {
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+    }
+    #tbody-articulos {
+        display: block;
+        max-height: 460px;
+        overflow-y: scroll;
+    }
+    .filtro {
+        position: absolute;
+        top: 17%;
+        width: 10%;
+        margin: 9px;
+    }
+}
+
+@media all and (max-width:992px) {
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+    }
+    table {
+        width: 100%;
+        height: 73vh;
+    }
+    #tbody-articulos {
+        display: block;
+        max-height: 447px;
+        overflow-y: scroll;
+    }
+    .filtro {
+        position: absolute;
+        top: 22%;
+        width: 13%;
+        margin: 9px;
+    }
+    input[type="text"] {
+        width: 131px;
+    }
+    .cabezera {
+        display: flex;
+        flex-direction: column;
+        height: 16vh;
+    }
+    .cabezera h1 {
+        font-size: 40px;
+        position: absolute;
+        top: 0%;
+        right: 41%;
+    }
+    .botones {
+        position: absolute;
+        top: 6%;
+        right: 15%;
+    }
+    #tbody-articulos td {
+        text-align: center;
+        font-size: 12px;
+    }
+    #tbody-articulos th,
+    td {
+        width: 12%;
+        height: 57px;
+    }
+    footer {
+        width: 100%;
+        height: 11vh;
+    }
+}
+
+@media all and (max-width:800px) {
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+    }
+    .botones {
+        margin-right: -96px;
+    }
+    #tbody-articulos {
+        display: block;
+        max-height: 445px;
+        overflow-y: scroll;
+    }
+    table th,
+    table td {
+        font-size: 12px;
+        padding: 13px;
+    }
+    #tbody-articulos td {
+        text-align: center;
+        padding: 6px;
+        border-top: 13px solid transparent;
+    }
+    #tbody-articulos th,
+    td {
+        width: 15.5%;
+        /* word-break: break-all; */
+        height: 66px;
+    }
+    footer {
+        flex-direction: column;
+    }
+    #totalRegistros {
+        /* position: absolute; */
+        /* right: 78%; */
+        font-size: 20px;
+        color: white;
+        flex-direction: column;
+        display: contents;
+    }
+}
+
+@media all and (max-width:400px) {
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+    }
+    .cabezera {
+        display: flex;
+        flex-direction: column;
+        height: 16vh;
+    }
+    .cabezera h3 {
+        font-size: 20px;
+        position: absolute;
+        top: 0%;
+        right: 36%;
+    }
+    .botones {
+        position: absolute;
+        top: 3%;
+        right: 3%;
+    }
+    .entrada {
+        display: none;
+    }
+    .btn {
+        width: 162px;
+        height: 27px;
+        cursor: pointer;
+        font-size: 13px;
+    }
+    table {
+        width: 100%;
+        height: 74vh;
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+        overflow: hidden;
+    }
+    table thead {
+        display: table;
+        width: 100vw;
+        height: 40px;
+        text-align: center;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    thead th {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        /* font-size: 12px; */
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+    }
+    #tbody-articulos {
+        display: block;
+        max-height: 214px;
+        overflow-y: scroll;
+    }
+    #tbody-articulos tr {
+        font-size: 16px;
+        /* border-bottom: 1px solid #fff; */
+        color: rgb(255, 255, 255);
+    }
+    table th,
+    table td {
+        font-size: 9px;
+        /* padding: 8px; */
+        /* text-align: center; */
+    }
+    #tbody-articulos td {
+        text-align: center;
+        padding: 0px;
+        border-top: 12px solid transparent;
+    }
+    #tbody-articulos th,
+    td {
+        width: 16.5%;
+        /* word-break: break-all; */
+        height: 42px;
+    }
+    footer {
+        flex-direction: column;
+    }
+    #totalRegistros {
+        /* position: absolute; */
+        /* right: 78%; */
+        font-size: 20px;
+        color: white;
+    }
+    tfoot {
+        width: 100vw;
+        height: 40px;
+        text-align: center;
+        z-index: 2;
+    }
+    tfoot th {
+        height: 37px;
+    }
+    footer h3 {
+        font-size: 20px;
+    }
+    #totalRegistros {
+        position: absolute;
+        right: 71%;
+        font-size: 14px;
+        color: white;
+    }
+}
+
+@media all and (max-width:600px) {
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+    }
+    .botones {
+        margin-right: 5px;
+    }
+    .btn {
+        width: 162px;
+        height: 27px;
+        cursor: pointer;
+        font-size: 13px;
+    }
+    .entrada {
+        display: none;
+    }
+    table thead {
+        width: 100vw;
+        height: 80px;
+    }
+    table thead th {
+        text-transform: uppercase;
+        margin-top: -12px;
+    }
+    #tbody-articulos {
+        display: block;
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+    table th,
+    table td {
+        font-size: 14px;
+        /* padding: 8px; */
+        /* text-align: center; */
+    }
+    #tbody-articulos td {
+        text-align: center;
+        padding: 4px;
+        border-top: 12px solid transparent;
+    }
+    #tbody-articulos th,
+    td {
+        width: 16.5%;
+        /* word-break: break-all; */
+        height: 74px;
+    }
+    footer {
+        flex-direction: column;
+    }
+    #totalRegistros {
+        /* position: absolute; */
+        /* right: 78%; */
+        font-size: 20px;
+        color: white;
+        flex-direction: column;
+        display: contents;
+    }
 }
