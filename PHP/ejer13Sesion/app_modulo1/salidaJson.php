@@ -11,13 +11,20 @@ if(isset($_GET["campo"]) &&  isset($_GET["palabra"])){
     $query2= " where {$campo} LIKE '%{$palabra}%'";
 }
 
+$orderBy = "numero_documento";
+
+if(isset($_GET["order"]) && $_GET["order"] != ""){
+    $orderBy = $_GET["order"];
+}
 
 
 
 
-$query = "SELECT p.*,t.nombre as tipo_documento_nombre,t.descripcion as tipo_documento_descripcion FROM personas p ";
+
+$query = "SELECT p.*,t.nombre as tipo_documento_nombre,t.descripcion as documento FROM personas p ";
 $query.= " INNER JOIN tipo_documento t ON t.id = p.id_tipo_documento ";
 $query.= $query2;
+$query.= " order by {$orderBy} ASC";
 
 
 $personasObj = [];
@@ -32,7 +39,7 @@ if ($resultado = $mysqli->query($query)) {
         $persona  = new stdClass;
         $persona->numero_documento = $fila["numero_documento"];
         $persona->tipo_documento_nombre = $fila["tipo_documento_nombre"];
-        $persona->tipo_documento_descripcion = $fila["tipo_documento_descripcion"];
+        $persona->tipo_documento_descripcion = $fila["documento"];
         $persona->nombre = $fila["nombre"];
         $persona->apellido = $fila["apellido"];
         $persona->fecha_nacimiento = $fila["fecha_de_nac"];

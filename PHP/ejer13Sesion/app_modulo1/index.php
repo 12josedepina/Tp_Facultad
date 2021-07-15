@@ -191,8 +191,9 @@ include("../valida_sesion.php");
 
     <!-- SCRIPTS DE LA APP -->
 
-    <script src="./ordena.js"></script>
+    
     <script src="../../jquery.js"></script>
+    <script src="ordena.js"></script>
 
     <!-- ********************************************************************************************************************************************************** -->
 
@@ -216,7 +217,7 @@ include("../valida_sesion.php");
         //FUNCION BOTON CARGAR EL TBODY DE LA TABLA 
         $(document).ready(function() {
             $("#cargar-articulos").click(function() {
-                cargaTabla();
+                cargaTabla('');
             });
             //FUNCION OCULTAR EL CONTENIDO DEL TBODY
             $("#limpiar-articulos").click(function() {
@@ -243,7 +244,7 @@ include("../valida_sesion.php");
                     $("#ventanaModalRespuestaModificar").show();
                     
                     $("#respuesta-modificar-persona").html(respuesta);
-                    cargaTabla();
+                    cargaTabla('');
 
                 },
                 error: function(){
@@ -273,7 +274,7 @@ include("../valida_sesion.php");
                     
                     $("#respuesta-modificar-persona").html(respuesta);
 
-                    cargaTabla();
+                    cargaTabla('');
                 },
                 error: function(){
                     console.log("error in ajax form submission");
@@ -330,7 +331,7 @@ include("../valida_sesion.php");
                     $("#respuesta-borrar").html(respuestaServer);
                     $("#ventanaModalBorrar").css("visibility", "visible");
                     $("#ventanaModalBorrar").css("display", "block");
-                    cargaTabla();
+                    cargaTabla('');
                 }
             });
 
@@ -357,8 +358,10 @@ include("../valida_sesion.php");
 
                     respuestaDocumentos = JSON.parse(respuestaDocumentosServer);
 
-                    for (var i=0; i<select.length; i++) {
-                        select.remove(i);
+                    var length = select.options.length;
+
+                    for (i = length-1; i >= 0; i--) {
+                        select.options[i] = null;
                     }
 
                     respuestaDocumentos.forEach(function(tipo_documento, index) {
@@ -463,7 +466,7 @@ include("../valida_sesion.php");
 
         
         // FUNCION CREAR  EL TBODY Y MOSTRARLO EN EL HTML (DATOS TRAIDOS DEL SERVIDOR)
-        function cargaTabla() {
+        function cargaTabla(campo) {
 
             var jsonFiltro = obtenerFiltro();
 
@@ -473,7 +476,7 @@ include("../valida_sesion.php");
             varobjAjax = $.ajax({
                 type: "get",
                 data : jsonFiltro,
-                url: "salidaJson.php",
+                url: "salidaJson.php?order="+campo,
             
                 success: function(respuestaDelServer, estado) {
                     $("#tbody-articulos").empty();

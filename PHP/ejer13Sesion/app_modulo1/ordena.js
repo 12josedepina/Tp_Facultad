@@ -1,26 +1,29 @@
+
+
 $(document).ready(function() {
     $("#colum-numero-documento").click(function() {
-        cargaTabla("colum-numero-documento");
+        console.log("enviando documento");
+        cargaTabla("numero_documento");
         cargarInput($(this).html());
     });
     $("#colum-tipo-documento").click(function() {
-        cargaTabla("colum-tipo-documento");
+        cargaTabla("documento");
         cargarInput($(this).html());
     });
     $("#colum-nombre").click(function() {
-        cargaTabla("colum-nombre");
+        cargaTabla("nombre");
         cargarInput($(this).html());
     });
     $("#colum-apellido").click(function() {
-        cargaTabla("colum-apellido");
+        cargaTabla("apellido");
         cargarInput($(this).html());
     });
     $("#colum-fecha-nacimiento").click(function() {
-        cargaTabla("colum-fecha-nacimiento");
+        cargaTabla("fecha_de_nac");
         cargarInput($(this).html());
     });
     $("#colum-email").click(function() {
-        cargaTabla("colum-email");
+        cargaTabla("email");
         cargarInput($(this).html());
     });
 

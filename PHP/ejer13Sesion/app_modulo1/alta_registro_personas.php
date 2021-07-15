@@ -16,15 +16,18 @@ $email = $_POST["email"];
 $fecha_nacimiento = $_POST["fecha_nacimiento"];
 
 //CONSULTA SQL  SELECCIONAMOS ID  DE TIPO DOCUMENTO  MIENTRA QUE NOMBRE  RECIBA EL PARAMETRO DE LA VARIABLE
-$queryIdTipoDocumento = " SELECT id FROM tipo_documento where nombre = ".$tipo_documento;
+$queryIdTipoDocumento = " SELECT id,descripcion FROM tipo_documento where nombre = '{$tipo_documento}'";
 
-$id_tipo_documento = 1;//seteado por default DNI
+$id_tipo_documento;//seteado por default DNI
+$dni_descripcion;
+
 
 if ($resultado = $mysqli->query($queryIdTipoDocumento)) {
     
     $fila = $resultado->fetch_assoc();
 
     $id_tipo_documento = $fila["id"];
+    $dni_descripcion = $fila["descripcion"];
 
 }
 
@@ -44,7 +47,7 @@ if (!$mysqli->query($query)) {
 echo "Datos recibidos para la Creación:"; echo "</br>";
 echo "Se creo la persona correctamente";echo "</br>";
 echo "Numero de documento : ".$numero_documento;echo "</br>";
-echo "Tipo de documento : ".$id_tipo_documento;echo "</br>";
+echo "Tipo de documento : ".$dni_descripcion;echo "</br>";
 echo "Nombre : ".$nombre;echo "</br>";
 echo "Apellido : ".$apellido;echo "</br>";
 echo "Fecha de Nacimiento : ".$fecha_nacimiento;echo "</br>";
