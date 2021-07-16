@@ -8,6 +8,7 @@ body {
     background: #ffffff;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
+    overflow: hidden;
 }
 
 .contenedor {
@@ -25,7 +26,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 360px;
+    height: 345px;
 }
 
 header .contenedor-texto {
@@ -98,8 +99,8 @@ header .menu a:hover {
 
 .main .trabajos .titulo {
     font-size: 34px;
-    line-height: 34px;
-    margin-bottom: 40px;
+    line-height: 24px;
+    margin-bottom: 30px;
     font-weight: 300;
     color: #3f36c5;
     text-align: center;
@@ -154,7 +155,7 @@ header .menu a:hover {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (min-width: 330px) {
     .contenedor {
         flex-direction: column;
     }
