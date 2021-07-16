@@ -1,5 +1,6 @@
 body {
     background: cadetblue;
+    margin: auto;
 }
 
 a {
@@ -22,9 +23,6 @@ h1 a {
     font-family: 'Lato', sans-serif;
     text-align: center;
     margin-top: 30px;
-    position: absolute;
-    top: 5%;
-    left: 40%;
 }
 
 .tabla .featured-table {
@@ -125,10 +123,27 @@ h1 a {
     font-size: 16px;
     padding: 9px;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 #menu a:hover {
     background: #d0dafd;
     color: #339;
+}
+
+@media screen and (max-width: 360px) {
+    .tabla .pricing-table__header {
+        padding: 10px;
+    }
+    .tabla .pricing-table__button {
+        padding: 15px;
+    }
+    .tabla .pricing-table__list {
+        padding: 0px;
+    }
+    #menu ul a {
+        font-size: 16px;
+        padding: 9px;
+        margin-left: 0px;
+    }
 }

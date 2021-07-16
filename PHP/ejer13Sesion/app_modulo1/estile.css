@@ -124,6 +124,7 @@ thead th {
 tr {
     display: table;
     width: 100%;
+    cursor: pointer;
 }
 
 tfoot {
@@ -695,73 +696,53 @@ p {
 
 @media all and (max-width:400px) {
     .contenedor {
-        width: 100%;
-        height: 100vh;
-    }
-    .cabezera {
         display: flex;
         flex-direction: column;
-        height: 16vh;
     }
-    .cabezera h3 {
-        font-size: 20px;
+    .cabezera {
+        height: 25vh;
+    }
+    .cabezera h1 {
+        font-size: 40px;
         position: absolute;
         top: 0%;
-        right: 36%;
+        right: 27%;
     }
     .botones {
         position: absolute;
-        top: 3%;
-        right: 3%;
+        top: 14%;
+        right: 31%;
+        display: flex;
+        flex-direction: column;
     }
     .entrada {
         display: none;
     }
+    .filtro {
+        display: none;
+    }
     .btn {
-        width: 162px;
+        width: 319px;
         height: 27px;
         cursor: pointer;
         font-size: 13px;
     }
     table {
-        width: 100%;
-        height: 74vh;
-        border-collapse: collapse;
-        text-align: center;
-        table-layout: fixed;
-        overflow: hidden;
-    }
-    table thead {
-        display: table;
-        width: 100vw;
-        height: 40px;
-        text-align: center;
-        overflow: hidden;
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-    thead th {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        /* font-size: 12px; */
-        font-weight: bold;
-        color: rgb(255, 255, 255);
+        height: 64vh;
     }
     #tbody-articulos {
-        display: block;
-        max-height: 214px;
-        overflow-y: scroll;
+        max-height: 300px;
+        overflow-x: scroll;
     }
     #tbody-articulos tr {
-        font-size: 16px;
+        font-size: 14px;
         /* border-bottom: 1px solid #fff; */
         color: rgb(255, 255, 255);
     }
     table th,
     table td {
-        font-size: 9px;
-        /* padding: 8px; */
+        font-size: 10px;
+        padding: 7px;
         /* text-align: center; */
     }
     #tbody-articulos td {
@@ -774,6 +755,15 @@ p {
         width: 16.5%;
         /* word-break: break-all; */
         height: 42px;
+    }
+    #tbody-articulos th,
+    td {
+        width: 165px;
+        height: 57px;
+    }
+    th,
+    td {
+        width: 9%;
     }
     footer {
         flex-direction: column;
@@ -801,65 +791,5 @@ p {
         right: 71%;
         font-size: 14px;
         color: white;
-    }
-}
-
-@media all and (max-width:600px) {
-    .contenedor {
-        width: 100%;
-        height: 100vh;
-    }
-    .botones {
-        margin-right: 5px;
-    }
-    .btn {
-        width: 162px;
-        height: 27px;
-        cursor: pointer;
-        font-size: 13px;
-    }
-    .entrada {
-        display: none;
-    }
-    table thead {
-        width: 100vw;
-        height: 80px;
-    }
-    table thead th {
-        text-transform: uppercase;
-        margin-top: -12px;
-    }
-    #tbody-articulos {
-        display: block;
-        max-height: 500px;
-        overflow-y: scroll;
-    }
-    table th,
-    table td {
-        font-size: 14px;
-        /* padding: 8px; */
-        /* text-align: center; */
-    }
-    #tbody-articulos td {
-        text-align: center;
-        padding: 4px;
-        border-top: 12px solid transparent;
-    }
-    #tbody-articulos th,
-    td {
-        width: 16.5%;
-        /* word-break: break-all; */
-        height: 74px;
-    }
-    footer {
-        flex-direction: column;
-    }
-    #totalRegistros {
-        /* position: absolute; */
-        /* right: 78%; */
-        font-size: 20px;
-        color: white;
-        flex-direction: column;
-        display: contents;
     }
 }

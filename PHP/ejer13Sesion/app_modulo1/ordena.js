@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
     $("#colum-numero-documento").click(function() {
         console.log("enviando documento");
@@ -31,4 +29,5 @@ $(document).ready(function() {
 
 function cargarInput(campoTabla) {
     $("#columnToOrder").val(campoTabla);
+
 }

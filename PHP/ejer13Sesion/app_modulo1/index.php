@@ -41,19 +41,19 @@ include("../valida_sesion.php");
             <table id="tabla-articulos">
                 <thead>
                     <tr>
-                        <th data-campo='id' id="colum-numero-documento"scope="col">Numero de Documento<br>
+                        <th data-campo='id' id="colum-numero-documento"scope="col">Numero de Documento
                             <div class="filtro"><input id="filtro-numero-documento" type="text" ></div>
                         </th>
-                        <th data-campo='tipodocumento' id="colum-tipo-documento" scope="col">Tipo de Documento<br>
+                        <th data-campo='tipodocumento' id="colum-tipo-documento" scope="col">Tipo de Documento
                             <div class="filtro"><input id="filtro-tipo-documento"  type="text" ></div>
                         </th>
-                        <th data-campo='nom' id="colum-nombre" scope="col">Nombre<br>
+                        <th data-campo='nom' id="colum-nombre" scope="col">Nombre
                             <div class="filtro"><input id="filtro-nombre"  type="text" ></div>
                         </th>
-                        <th data-campo='ape' id="colum-apellido" scope="col">Apellidos<br>
+                        <th data-campo='ape' id="colum-apellido" scope="col">Apellidos
                             <div class="filtro"><input id="filtro-apellido"  type="text" ></div>
                         </th>
-                        <th data-campo='fechaNac' id="colum-fecha-nacimiento" scope="col">Fecha de Nacimiento<br>
+                        <th data-campo='fechaNac' id="colum-fecha-nacimiento" scope="col">Fecha de Nacimiento
                             <div class="filtro"><input id="filtro-fecha-nacimiento"  type="text" ></div>
                         </th>
                         <th data-campo='mail' scope="col" id="colum-email">Email</th>
@@ -538,6 +538,10 @@ include("../valida_sesion.php");
                     $("#totalRegistros").html("Nro de registros: " + objJson.length);
                 }
             });
+
+            function clearTable() {
+            $("#tbody-articulos").empty();
+        }
 
         }
 
